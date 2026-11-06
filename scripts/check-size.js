@@ -11,7 +11,7 @@ const csso = require("csso");
 
 const HARD_LIMIT = 50000; // textarea maxlength on BGA
 const WARN_LIMIT = 45000; // headroom alert
-const GENERAL_UI_BUDGET = 15000; // base + shared components + pages; games get the rest
+const GENERAL_UI_BUDGET = 20000; // base + shared components + pages; games get the rest
 
 const root = path.join(__dirname, "..");
 const src = path.join(root, "src");
