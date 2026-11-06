@@ -1,0 +1,26 @@
+@use "../palette" as *;
+
+// Chat bar and chat windows (legacy). Bubbles, title bars and inputs already
+// follow the base layer through BGA's own html.dark rules.
+
+// BGA's dark theme puts a light glow behind chat player names, meant for dark
+// player colors (inline style, in-game). Without an inline color the name is
+// our $cyan and the glow only blurs it.
+// `html` ties BGA's `html.dark .chatlog .playername` (0,3,1); we come later.
+html .chatlog .playername:not([style*="color"]) {
+  text-shadow: none;
+}
+
+.message_read:not(#_) {
+  color: $green;
+}
+
+// Unread messages counter on a collapsed chat window
+.chatwindownewmsgcount {
+  background: $pink;
+  color: $bg;
+}
+
+#chatbarinput_stopnotif_general {
+  color: $comment;
+}
