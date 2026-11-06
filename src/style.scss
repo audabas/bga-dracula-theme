@@ -3,3 +3,5 @@
 //
 // Order: base first, then shared components, then pages, then games.
 // Add a line here when a partial is created; delete the partial if it ends up empty.
+@use "base";
+@use "components/button";

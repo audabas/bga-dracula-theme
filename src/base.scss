@@ -1,0 +1,110 @@
+@use "palette" as *;
+
+// Base layer: remap the official dark theme's custom properties to the Dracula
+// palette. Unlayered `html.dark` beats BGA's own `html.dark{}` block because we
+// come later in the cascade. Sass needs `#{}` inside custom properties.
+//
+// Reference grey mapping (BGA dark value -> Dracula), lightest surface last:
+//   blackbg #000                     -> bg-darker
+//   main-bgcolor #202126 (page)      -> bg-dark
+//   whitebg #282a33 (panels)         -> bg
+//   gray-50/100/200/204/211          -> bg-light
+//   gray-233/244                     -> bg-lighter
+//   gray-300                         -> current-line
+//   gray-141/171/400 (muted)         -> comment
+//   gray-500..950, 78 (text)         -> fg
+html.dark {
+  // BGA sets an inline #202126 background on <html>
+  background: $bg-dark !important;
+
+  --palette-main-bg: none;
+  --palette-bga-blackbg: #{$bg-darker};
+  --palette-bga-main-bgcolor: #{$bg-dark};
+  --palette-bga-whitebg: #{$bg};
+  --palette-bga-gray-50: #{$bg-light};
+  --palette-bga-gray-100: #{$bg-light};
+  --palette-bga-gray-200: #{$bg-light};
+  --palette-bga-gray-204: #{$bg-light};
+  --palette-bga-gray-211: #{$bg-light};
+  --palette-bga-gray-233: #{$bg-lighter};
+  --palette-bga-gray-244: #{$bg-lighter};
+  --palette-bga-gray-300: #{$current-line};
+  --palette-bga-gray-141: #{$comment};
+  --palette-bga-gray-171: #{$comment};
+  --palette-bga-gray-400: #{$comment};
+  --palette-bga-gray-500: #{$fg};
+  --palette-bga-gray-600: #{$fg};
+  --palette-bga-gray-700: #{$fg};
+  --palette-bga-gray-78: #{$fg};
+  --palette-bga-gray-800: #{$fg};
+  --palette-bga-gray-900: #{$fg};
+  --palette-bga-gray-950: #{$fg};
+  --bga-color-white: #{$fg};
+  --bga-color-black: #{$fg};
+  --bga-input-background: #{$current-line};
+  --bga-input-background-dark: #{$bg-lighter};
+
+  // Links and accents
+  --palette-bga-link: #{$cyan};
+  --palette-bga-link-active: #{$pink};
+  --palette-bga-link-red: #{$red};
+  --palette-bga-link-red-active: #{$pink};
+  --palette-bga-link-green: #{$green};
+  --palette-bga-blue: #{$purple};
+  --palette-bga-primary: #{$purple};
+  --palette-bga-purple: #{$current-line};
+  --palette-bga-cyan: #{$cyan};
+  --palette-bga-username: #{$cyan};
+  --palette-bga-username-active: #{$pink};
+  --palette-bga-gamename: #{$purple};
+  --palette-bga-gamename-active: #{$pink};
+  --palette-bga-quick-play: #{$purple};
+  --palette-bga-arena: #{$purple};
+  --palette-bga-tournament: #{$purple};
+  --palette-bga-notification: #{$current-line};
+  --palette-bga-input-red: #{$red};
+  --palette-bga-input-blue: #{$cyan};
+  --palette-bga-input-green: #{$green};
+  --palette-bga-input-purple: #{$purple};
+  --palette-bga-yellow-award: #{$yellow};
+  --palette-bga-yellow-cue: #{$yellow};
+  --palette-bga-list-highlight-yellow: #{$yellow};
+  --palette-bga-xp: #{$yellow};
+  --palette-bga-xp-700: #{$orange};
+  --palette-bga-table-tb: #{$orange};
+  --palette-bga-table-rt: #{$green};
+  --palette-bga-group: #{$green};
+  --palette-bga-group-active: #{$green};
+  --palette-bga-admin-only: #{$orange};
+  --palette-bga-game-public: #{$cyan};
+  --palette-bga-game-beta: #{$orange};
+  --palette-bga-game-alpha: #{$pink};
+
+  // Karma
+  --palette-bga-karma-perfect: #{$green};
+  --palette-bga-karma-exceptional: #{$green};
+  --palette-bga-karma-verygood: #{$green};
+  --palette-bga-karma-good: #{$green};
+  --palette-bga-karma-average: #{$yellow};
+  --palette-bga-karma-notgood: #{$orange};
+  --palette-bga-karma-bad: #{$red};
+  --palette-bga-karma-verybad: #{$red};
+  --palette-bga-karma-exceptional-light: #{$bg-light};
+  --palette-bga-karma-bad-light: #{$bg-light};
+
+  // Button fills are set by selector in components/button.scss
+  --bga-button-secondary-outline: #{$comment};
+}
+
+// Light theme is unsupported: tell the player to switch.
+html:not(.dark) body::before {
+  content: "Dracula theme: enable BGA's dark theme · Thème Dracula : activez le thème sombre de BGA";
+  position: fixed;
+  z-index: 99999;
+  inset: 0 0 auto;
+  padding: 8px;
+  background: $red;
+  color: $bg;
+  font: bold 16px sans-serif;
+  text-align: center;
+}

@@ -1,0 +1,60 @@
+@use "sass:list";
+@use "../palette" as *;
+
+// Flat Dracula buttons. BGA has two button families with the same color names:
+// legacy `.bgabutton.bgabutton_<c>` and Svelte `.bga-button.bga-button--<c>`
+// (whose rules carry a Svelte hash, hence the two-class selectors to match it).
+// The --bga-button-* variables can't be used: BGA stacks them as two background
+// layers (`background:var(--x),var(--x-border)`), where a plain color is invalid
+// in the first layer.
+$colors: (
+  $purple: blue purple,
+  $red: red,
+  $green: green light-green,
+  $yellow: yellow,
+  $orange: orange,
+  $cyan: teal,
+);
+
+// Colors that exist in the legacy family (the others are Svelte-only)
+$legacy-names: blue purple red green yellow gray darkgray;
+
+@function sel($names) {
+  $legacy: ();
+  $svelte: ();
+  @each $n in $names {
+    @if list.index($legacy-names, $n) {
+      $legacy: list.append($legacy, ".bgabutton_#{$n}", comma);
+    }
+    $svelte: list.append($svelte, ".bga-button--#{$n}", comma);
+  }
+  @if list.length($legacy) == 0 {
+    @return ".bga-button:is(#{$svelte})";
+  }
+  @return ".bgabutton:is(#{$legacy}), .bga-button:is(#{$svelte})";
+}
+
+$all: ();
+@each $color, $names in $colors {
+  $all: list.join($all, $names);
+  #{sel($names)} {
+    background: $color;
+  }
+}
+
+#{sel($all)} {
+  color: $bg;
+
+  &:is(:hover, :active) {
+    background: $pink;
+  }
+}
+
+// Secondary buttons keep light text
+#{sel(gray darkgray)} {
+  background: $bg-lighter;
+
+  &:is(:hover, :active) {
+    background: $current-line;
+  }
+}
