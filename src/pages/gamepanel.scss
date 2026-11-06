@@ -1,0 +1,20 @@
+@use "../palette" as *;
+
+// Game page (/gamepanel?game=…). Header scrims over the game art, arena league
+// labels (tier colors) and filter tags (category colors) are left as BGA draws them.
+
+// Info table bars (complexity, strategy, luck, interaction), colored inline next
+// to sprite icons of the same hue: dark red, dark blue, black (invisible on the
+// dark panel), dark green
+$stat-bars: (
+  "136, 0, 0": $red,
+  "0, 0, 136": $purple,
+  "0, 0, 0": $comment,
+  "0, 136, 0": $green,
+);
+
+@each $rgb, $color in $stat-bars {
+  .bga-page-section__stat-bar[style*="rgb(#{$rgb})"] {
+    background: $color !important;
+  }
+}
