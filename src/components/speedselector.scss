@@ -1,0 +1,43 @@
+@use "../palette" as *;
+
+// Game speed selector (tournament page; also table creation). BGA's script
+// colors each segment inline from a scale (light blue → purple → magenta → red,
+// greys when disabled, the selected one colored) and the knob through an inline
+// `--sliderColor` on the selector. The segments can't be matched one by one, so
+// they turn transparent over one track gradient; the knob sits on the selection.
+.bga-lobby-speed-selector__segment {
+  background-color: transparent !important;
+}
+
+// Turtle/hare/infinity icons: white 60% → dark 60% on the light track
+.bga-lobby-speed-selector__segment:not(#_) {
+  color: #{$bg}99;
+}
+
+.bga-lobby-speed-selector__part2:not(#_) {
+  background: linear-gradient(90deg, $cyan, $purple, $pink, $red);
+}
+
+// "No time limit" segment: aqua gradient
+.bga-lobby-speed-selector__infinite:not(#_) {
+  background: $cyan;
+}
+
+.bga-lobby-speed-selector {
+  --sliderColor: #{$current-line} !important;
+}
+
+// Knob icon: white 52%
+.bga-lobby-speed-selector__slider:not(#_) {
+  color: $fg;
+}
+
+// Disabled (read-only, e.g. on a tournament page): grey track
+.bga-lobby-speed-selector--other-disabled .bga-lobby-speed-selector__part2:not(#_),
+.bga-lobby-speed-selector--infinite-disabled .bga-lobby-speed-selector__infinite:not(#_) {
+  background: linear-gradient(90deg, $bg-lighter, $bg-light);
+}
+
+.bga-lobby-speed-selector--other-disabled .bga-lobby-speed-selector__segment:not(#_) {
+  color: $comment;
+}

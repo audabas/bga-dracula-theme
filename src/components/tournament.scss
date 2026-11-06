@@ -13,17 +13,27 @@
   outline-color: $purple;
 }
 
-// Bottom status bar: "open" blue under a black shade, inline → `$yellow` like
-// the tournament page's "open" band (components/progressbar.scss), dark text.
-// The black shade over the unfilled part (registrations left) is kept.
-$open: '[style*="30, 141, 219"]';
+// Bottom status bar under a black shade, colored inline by status, mapped to the
+// tournament status colors (see pages/tournament.scss): "open" blue → `$yellow`,
+// "in progress" lavender → `$purple` (both with dark text), "finished" grey →
+// `$bg-light`. The black shade over the unfilled part (registrations left) is kept.
+$open: '[style*="rgb(30, 141, 219)"]';
+$in-progress: '[style*="rgb(166, 137, 177)"]';
 
 .bga-tournament-list-item #{$open} {
   background: $yellow !important;
 }
 
+.bga-tournament-list-item #{$in-progress} {
+  background: $purple !important;
+}
+
+.bga-tournament-list-item [style*="rgb(128, 128, 128)"] {
+  background: $bg-light !important;
+}
+
 // (its children carry Tailwind `text-white`, layered: any unlayered rule wins)
-.bga-tournament-list-item:has(#{$open}) .bga-tournament-list-item__bottom * {
+.bga-tournament-list-item:has(#{$open}, #{$in-progress}) .bga-tournament-list-item__bottom * {
   color: $bg;
 }
 

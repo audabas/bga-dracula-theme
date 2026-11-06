@@ -1,0 +1,105 @@
+@use "../palette" as *;
+
+// Single tournament page (/tournament?id=…). Status band: components/progressbar.scss;
+// schedule dates: components/datechip.scss; game speed: components/speedselector.scss.
+// ELO labels keep BGA's tier colors (decision).
+//
+// Tournament status colors, the same everywhere (band, list card bar, encounter
+// cards, player list frame): open `$yellow`, in progress `$purple`, finished
+// `$bg-light`; dark text on the pastel ones.
+
+// Panels: alternate rows (black 9%) and the announcement's terms separator (#bcbcbc)
+.bga-tournament-panel__content:not(#_) {
+  --bga-tournament-panel__sectionAltBg: #{$bg-light};
+}
+
+.terms-and-conditions-container:not(#_) {
+  border-color: $comment;
+}
+
+// Participant badge (rank over a cup watermark) at the end of each player row:
+// light grey / lavender / greys by state
+.bga-tournament-player-badge-icon:not(#_) {
+  color: #{$bg}40; // cup watermark, 25% alpha
+}
+
+.bga-tournament-player-badge-icon--joined:not(#_),
+.bga-tournament-player-badge-icon--registered:not(#_) {
+  background: $comment;
+}
+
+.bga-tournament-player-badge-icon--active:not(#_) {
+  background: $current-line;
+}
+
+.bga-tournament-player-badge-icon--finished:not(#_),
+.bga-tournament-player-badge-icon--eliminated:not(#_) {
+  background: $bg-light;
+}
+
+// « État du tournoi »: stage headers (purple gradient arrows)
+.tournament-overview-step-header__shape:not(#_) {
+  background: linear-gradient(90deg, $purple, #{$purple}b3); // 70% alpha
+  color: $bg;
+}
+
+// Player list frame by status: group cards through a variable, the overview's
+// list panel inline (purple #6958b2 / grey #4e4e4e)
+$list-in-progress: '.overview-player-list-panel[style*="rgb(105, 88, 178)"]';
+
+.group-card[data-status="progress"]:not(#_) {
+  --group-card-bg: #{$purple};
+}
+
+.group-card[data-status="finished"]:not(#_) {
+  --group-card-bg: #{$bg-light};
+}
+
+#{$list-in-progress} {
+  background: $purple !important;
+}
+
+// Its header cells and the group title are Tailwind `text-white`
+:is(#{$list-in-progress}, .group-card[data-status="progress"]) :is(th, th *, .group-card__title *) {
+  color: $bg;
+}
+
+// Encounter cards, inline by status: finished grey, skipped light grey, in
+// progress lavender with a purple fill up to its progress. The fill's stop
+// can't be matched, so in progress is flat (its label shows the %). No component
+// class: the Tailwind utility is the only stable hook (cards still loading have
+// no `.encounter-link`), narrowed by the inline color.
+$encounter: ".bg-bga-gray-78";
+
+#{$encounter}[style*="rgb(78, 78, 78)"],
+.overview-player-list-panel[style*="rgb(78, 78, 78)"] {
+  background: $bg-light !important;
+}
+
+#{$encounter}[style*="rgb(209, 213, 219)"] {
+  background: $comment !important;
+}
+
+#{$encounter}[style*="rgb(162, 156, 196)"] {
+  background: $purple !important;
+
+  > .encounter-link {
+    color: $bg;
+  }
+}
+
+// Player rows of an encounter being played (white 16%, with a sweep animation)
+.encounter-shallow-row:not(#_) {
+  background-color: $bg;
+}
+
+// Results podium: laurels greyed by a CSS filter → `$comment` fill; gold
+// « N victoires » (inline #927c1f)
+.bga-tournament-laurels-svg-container:not(#_) {
+  filter: none;
+  fill: $comment;
+}
+
+.tournament-results__row [style*="927c1f"] {
+  color: $yellow !important;
+}

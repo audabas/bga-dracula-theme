@@ -45,3 +45,20 @@
   @extend %dark-overlay;
   background: $yellow !important;
 }
+
+// Tournament status colors: see pages/tournament.scss
+.bga-progress-bar[style*="rgb(189, 92, 208)"] {
+  // tournament "in progress": magenta-to-violet gradient
+  @extend %dark-overlay;
+  background: $purple !important;
+
+  // elapsed part, otherwise purple on purple
+  .bga-progress-bar__progress-gradient {
+    --barProgressColorTo: #{$pink} !important;
+  }
+}
+
+.bga-progress-bar[style*="rgb(45, 45, 45)"] {
+  // tournament "finished": black-to-grey gradient
+  background: $bg-light !important;
+}

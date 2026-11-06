@@ -1,0 +1,26 @@
+@use "../palette" as *;
+
+// Date chips (tournament schedule: registration, start, estimated end). BGA sets
+// each chip's color inline, and a darker shade on its time field. White text is
+// Tailwind `text-white` (layered): dark text on the pastel chips.
+.bga-date-chip[style*="rgb(30, 140, 217)"] {
+  // registration: blue
+  background: $cyan !important;
+  color: $bg;
+}
+
+.bga-date-chip[style*="rgb(149, 20, 204)"] {
+  // start: purple
+  background: $purple !important;
+  color: $bg;
+}
+
+.bga-date-chip[style*="rgb(93, 93, 93)"] {
+  // end: grey (white text kept)
+  background: $comment !important;
+}
+
+// Time field: a darker shade of the chip
+.bga-date-chip__field[style*="background"] {
+  background: #{$bg}40 !important; // 25% alpha
+}
