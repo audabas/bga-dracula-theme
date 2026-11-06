@@ -1,0 +1,14 @@
+@use "../palette" as *;
+
+// Lobby table item (« En recherche de joueurs » on /gamepanel, where a table in
+// setup opens: /gamepanel?…&table=…) and the play panel next to it: dark blue
+// #194681 frames → `$purple` like the tournament list item's selection; the
+// item's red details (player count, options) render a washed-out #ae7673 → `$red`.
+.bga-lobby-table-item__border:not(#_),
+.panel-block--buttons__play-wrapper:not(#_) {
+  border-color: $purple;
+}
+
+.bga-lobby-table-item .text-red-500 {
+  color: $red;
+}

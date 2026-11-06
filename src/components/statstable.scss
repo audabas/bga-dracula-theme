@@ -1,0 +1,12 @@
+@use "../palette" as *;
+
+// Stats tables (finished table's player stats; also used by /gamestats and
+// /translationhq): orange header cells with white text, black cell borders.
+.statstable :is(td, th) {
+  border-color: $bg;
+}
+
+.statstable th {
+  background: $orange;
+  color: $bg;
+}

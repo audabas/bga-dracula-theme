@@ -1,0 +1,19 @@
+@use "../palette" as *;
+
+// Table page (/table?table=…). Players' ELO and arena bars are tier-colored
+// (`elo_*`, `arena_*` classes): left as BGA draws them (user decision). The left
+// speed band and the language bubble's arrow are sprites. Stats table:
+// components/statstable.scss. A table in setup opens on /gamepanel:
+// components/lobbytable.scss.
+
+// Language bubble under each player (gray border) and the player warnings box
+// (#ccc border; not seen live)
+.player_presentation .playersubinfos_lang,
+.warning_low {
+  border-color: $comment;
+}
+
+// « La table de jeu a été abandonnée » and other important results (red)
+.game_result_status_important {
+  color: $red;
+}
