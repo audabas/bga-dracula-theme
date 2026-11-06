@@ -1,0 +1,36 @@
+@use "../palette" as *;
+
+// Dijit (tundra) tooltips: the base layer colors their body, the border stays
+// tundra blue.
+.tundra .dijitTooltipContainer {
+  border-color: $comment;
+}
+
+// ELO tooltip (rating details on hover): the official dark theme only darkens
+// odd duel rows, even rows stay #fff under light text. Names are hardcoded
+// teal, modifier highlights are tuned for a light background.
+.player-elo-tooltip {
+  .duel:nth-child(2n):not(#_) {
+    background: $bg;
+  }
+
+  :is(.opponent-name, .player-name) {
+    color: $cyan;
+  }
+
+  .duel-conditions:not(#_) {
+    color: $comment;
+  }
+}
+
+.modifier-bonus .modifier-highlight:not(#_) {
+  color: $yellow;
+}
+
+.modifier-nullifier .modifier-highlight:not(#_) {
+  color: $fg;
+}
+
+.modifier-malus .modifier-highlight:not(#_) {
+  color: $orange;
+}

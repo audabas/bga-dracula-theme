@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Top-of-page messages (#head_infomsg, BGA's showMessage). Info messages follow
+// the base layer; errors are pure `red`.
+.head_error {
+  background: $red;
+  color: $bg;
+}
