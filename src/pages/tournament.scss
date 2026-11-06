@@ -88,6 +88,11 @@ $encounter: ".bg-bga-gray-78";
   }
 }
 
+// Encounter number pill: `bg-bga-tournament` (now `$pink`) under white text
+.bg-bga-tournament {
+  color: $bg;
+}
+
 // Player rows of an encounter being played (white 16%, with a sweep animation)
 .encounter-shallow-row:not(#_) {
   background-color: $bg;
