@@ -1,0 +1,41 @@
+@use "../palette" as *;
+
+// Svelte form controls (toggle, checkbox, radiobox): preferences, tournaments,
+// group creation. Their colors come from custom properties that BGA sets
+// inline on each control (toggle `--bga-toggle-color: rgb(1, 64, 144)`, radio
+// `--background-color: #1a57a7`, checkbox `var(--palette-bga-blue)`), so only
+// `!important` on the properties themselves can override them.
+.bga-toggle {
+  --bga-toggle-color: #{$purple} !important;
+}
+
+// Checked fill, check mark/dot, hover fill (primary-button convention)
+.bga-checkbox,
+.bga-radiobox {
+  --background-color: #{$purple} !important;
+  --check-color: #{$bg} !important;
+  --background-color-faded: #{$purple}80 !important; // 50% alpha
+}
+
+// Disabled (checked) checkbox: light grey #b0b0b0 / #818181
+.bga-checkbox--disabled,
+.bga-radiobox--disabled {
+  --background-color: #{$current-line} !important;
+  --check-color: #{$comment} !important;
+}
+
+// Toggle knob: near-white gradient → flat. BGA's disabled rules are (0,4,0)
+// with only three stable classes to match, hence `:not(#_)`.
+.bga-toggle__slider:not(#_) {
+  background: $fg;
+}
+
+// Disabled: on-track #b0b0b0 → $comment (off track stays $bg-lighter), knob dimmed
+.bga-toggle--disabled.bga-toggle--on:not(#_) {
+  background: $comment;
+}
+
+.bga-toggle--disabled .bga-toggle__slider:not(#_) {
+  background: $current-line;
+  color: $comment;
+}
