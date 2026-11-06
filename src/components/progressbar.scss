@@ -1,0 +1,47 @@
+@use "../palette" as *;
+
+// Svelte progress/timeline bar: premium offer, arena season header (/halloffame),
+// tournament status band. Its colors are set inline (style attribute or inline
+// custom properties), hence `!important` on those properties.
+
+// Elapsed part: diagonal gradient up to the current point (BGA fades it in from
+// transparent on premium; keeps the start light under the bar's text)
+.bga-progress-bar__progress-gradient {
+  --barProgressColorFrom: transparent !important;
+  --barProgressColorTo: #{$purple} !important;
+}
+
+// "Now" tooltip under the bar (blue/teal gradient; also colors its tip), white text kept
+.bga-progress-bar__tooltip {
+  --bga-progressbar-tooltipColorFrom: #{$current-line} !important;
+  --bga-progressbar-tooltipColorTo: #{$current-line} !important;
+}
+
+// Premium: activity histogram (pale yellow → grey)
+.bga-histogram-bars {
+  --barsColor: linear-gradient(#{$yellow}bf, #{$comment}33) !important; // 75% / 20% alpha
+}
+
+// White text with a dark shadow is unreadable on the pastel bars below → dark text
+%dark-overlay .bga-progress-bar__overlay {
+  color: $bg;
+  text-shadow: none !important;
+}
+
+// Bar backgrounds, matched on BGA's inline values
+.bga-progress-bar[style*="79, 116"] {
+  // premium: dark blue
+  background: linear-gradient(90deg, $current-line, $bg-darker) !important;
+}
+
+.bga-progress-bar[style*="yellow, purple"] {
+  // arena season: named yellow → purple
+  @extend %dark-overlay;
+  background: linear-gradient(90deg, $orange, $purple) !important;
+}
+
+.bga-progress-bar[style*="224, 211"] {
+  // tournament "open" status: dark yellow gradient → flat
+  @extend %dark-overlay;
+  background: $yellow !important;
+}
