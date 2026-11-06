@@ -6,8 +6,8 @@
 // players tag): border and text in the type's color, filled when active (Svelte,
 // up to (0,3,0)). `--t` = the tag's type color, set by the type rules below
 // (after the base one). Table type colors (glossary): tournament `$pink`, play
-// `$purple`, waiting `$red`. Not in the glossary: arena follows play (BGA's arena
-// palette variable is already `$purple`), players `$cyan`, untyped grey `$comment`.
+// `$purple`, arena `$cyan`, waiting `$red`. Not in the glossary: players `$cyan`,
+// untyped grey `$comment`.
 .bga-progress-list-tag {
   --t: #{$comment};
 }
@@ -16,8 +16,7 @@
   --t: #{$pink};
 }
 
-.bga-progress-list-tag--type-play,
-.bga-progress-list-tag--type-arena {
+.bga-progress-list-tag--type-play {
   --t: #{$purple};
 }
 
@@ -25,6 +24,7 @@
   --t: #{$red};
 }
 
+.bga-progress-list-tag--type-arena,
 .bga-progress-list-tag--type-players {
   --t: #{$cyan};
 }

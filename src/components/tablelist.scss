@@ -1,0 +1,30 @@
+@use "../palette" as *;
+
+// Table cards (/gametables, sections of /gameinprogress): a band colored inline
+// by table type from BGA's light palette (quick-play #40759e, arena #584ea1,
+// tournament #8f5ca7) → table type colors (glossary). Only these are mapped
+// (waiting bands: value unknown, BGA's kept). White text and icons on the band
+// (options line, table icon) turn dark; the faint watermark icon is kept.
+$table-types: (
+  "64, 117, 158": $purple,
+  "88, 78, 161": $cyan,
+  "143, 92, 167": $pink,
+);
+
+$known: ();
+@each $rgb, $color in $table-types {
+  $known: append($known, '[style*="rgb(#{$rgb})"]', comma);
+
+  .bga-table-list-item__background[style*="rgb(#{$rgb})"] {
+    background: $color !important;
+  }
+}
+
+.bga-table-list-item__background:is(#{$known}) :is(.bga-table-list-item__progress-bar, .bga-table-list-item__table-icon) {
+  color: $bg;
+}
+
+// (the table icon's path has fill="#FFFFFF": follow the text color instead)
+.bga-table-list-item__table-icon path {
+  fill: currentColor;
+}
