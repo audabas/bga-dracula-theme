@@ -1,0 +1,47 @@
+@use "../palette" as *;
+
+// Lobby (/lobby, "Jouer"). Mode icons and game box ribbons are images: left.
+
+// Square icon buttons on game boxes (tutorial, add favorite, ELO, auto-play
+// prefs): flat Dracula fills with dark icons instead of white on pastel.
+.wannaplay_mask_button {
+  &.how_to_play_button {
+    background: $cyan;
+  }
+
+  &.add_favorite {
+    background: $yellow;
+  }
+
+  &.myelo {
+    background: $purple;
+  }
+
+  &.wannaplayauto_pref {
+    background: $current-line;
+  }
+
+  // "remove favorite" keeps a grey fill and its own icon colors
+  &:not(.del_favorite, .wannaplayauto_pref) :is(i, .frontplus) {
+    color: $bg;
+  }
+
+  &.add_favorite .backplus {
+    color: $yellow;
+  }
+}
+
+// Games with open tables
+.game_box_wrap.tables_available {
+  border-color: $purple;
+}
+
+// "Play with friends" plus badge
+.icon_plus {
+  background: $purple;
+  color: $bg;
+}
+
+.bga_big_input {
+  border-color: $current-line;
+}
