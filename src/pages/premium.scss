@@ -1,0 +1,32 @@
+@use "../palette" as *;
+
+// Premium page (/premium). Premium gold, payment brand buttons (Card, iDEAL) and
+// mascot art are left as BGA draws them. Progress bar: components/progressbar.scss.
+
+// Offer card headers, colored inline by BGA's script: the plan's color (red
+// « Meilleure offre », blue « Premium »), or past due red, current subscription
+// blue, special offer orange. No component class: the Tailwind utility is the
+// only stable hook, narrowed by the inline color.
+$offer-headers: (
+  "229, 40, 40": $pink,
+  "17, 102, 168": $purple,
+  "237, 160, 61": $orange,
+);
+
+@each $rgb, $color in $offer-headers {
+  .transition-all[style*="rgb(#{$rgb})"] {
+    background: $color !important;
+    color: $bg;
+  }
+}
+
+// Features section over a darkened photo: its edges fade to dark blues
+// (#2b3443 top, #172033 bottom, `html.dark` rule) → the neighbors' backgrounds
+.bga-premium-page-section--features:not(#_) {
+  background: linear-gradient($bg-light, #0000 8% 92%, $bg-dark);
+}
+
+// Gift code banner: white 50% band across a darkened photo
+.bga-premium-page-section--gift-banner:not(#_) {
+  background: linear-gradient(90deg, #0000, #{$current-line}cc 40% 60%, #0000); // 80% alpha
+}
