@@ -58,13 +58,6 @@ $known: ();
   border-color: $comment !important;
 }
 
-// Report table header: `bg-bga-blue` (`$purple`) under Tailwind `text-white`
-// (on the cells and their sort buttons)
-.bga-bugs-page th.bg-bga-blue,
-.bga-bugs-page th.bg-bga-blue button {
-  color: $bg;
-}
-
 // Report page: status band in the status's darker shade with white text → a
 // neutral band (the status is spelled out in it; the list badge keeps its color)
 .bga-bug-page .p-4.font-bold[style*="background-color"] {

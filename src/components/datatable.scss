@@ -1,0 +1,9 @@
+@use "../palette" as *;
+
+// Header cells `th.bg-bga-blue` (`$purple`, as BGA blue is everywhere) under
+// Tailwind `text-white` (layered), on the cells and their sort buttons → dark
+// text. Seen in the Svelte data tables (`.bga-table`: /bugs, /translationhq).
+th.bg-bga-blue,
+th.bg-bga-blue button {
+  color: $bg;
+}

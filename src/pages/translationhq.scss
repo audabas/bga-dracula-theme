@@ -1,0 +1,15 @@
+@use "../palette" as *;
+
+// Translation centre (/translationhq). Progress percentages are colored inline
+// with named colors (orange, red, and a low-contrast green).
+$progress-colors: (
+  "orange": $orange,
+  "red": $red,
+  "green": $green,
+);
+
+@each $name, $color in $progress-colors {
+  .bga-translationhq-table td[style*="color: #{$name}"] {
+    color: $color !important;
+  }
+}

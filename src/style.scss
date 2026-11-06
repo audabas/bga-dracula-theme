@@ -23,6 +23,7 @@
 @use "components/tablelist";
 @use "components/statstable";
 @use "components/lobbytable";
+@use "components/datatable";
 @use "pages/homepage";
 @use "pages/lobby";
 @use "pages/gamelist";
@@ -34,3 +35,4 @@
 @use "pages/table";
 @use "pages/grouplist";
 @use "pages/bugs";
+@use "pages/translationhq";
