@@ -1,0 +1,10 @@
+@use "../palette" as *;
+
+// Game list (/gamelist). Filter arrows and tags keep BGA's category colors
+// (decision: category colors are data, like player colors).
+
+// First game-browser panel ("Rejouer") fades into a neutral #1f1f1f band.
+// `:not(… ~ *, #_)` picks the first panel and outranks Svelte's (0,3,0).
+.bga-game-browser__panel:not(.bga-game-browser__panel ~ *, #_) {
+  background: linear-gradient(#0000, $bg-darker);
+}
