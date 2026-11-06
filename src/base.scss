@@ -110,15 +110,22 @@ html.dark {
   background: #{$bg-light}b3; // 70% alpha, site-wide (e.g. /newgroup radio cards)
 }
 
-// Light theme is unsupported: tell the player to switch.
+// Light theme banner: the light theme is unsupported, tell the player to switch.
+// At the bottom and click-through so it never hides the top bar (mobile hamburger).
+// Text follows the interface language (<html lang>): French, otherwise English.
 html:not(.dark) body::before {
-  content: "Dracula theme: enable BGA's dark theme · Thème Dracula : activez le thème sombre de BGA";
+  content: "Dracula theme: enable BGA's dark theme";
   position: fixed;
   z-index: 99999;
-  inset: 0 0 auto;
+  inset: auto 0 0;
+  pointer-events: none;
   padding: 8px;
   background: $red;
   color: $bg;
   font: bold 16px sans-serif;
   text-align: center;
+}
+
+html:not(.dark):lang(fr) body::before {
+  content: "Thème Dracula : activez le thème sombre de BGA";
 }
