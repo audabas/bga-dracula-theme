@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// BGA dropdowns (filters, selects). The base layer already colors them; only
+// the hover needs help: BGA's dark option/hover greys (gray-233/244) are nearly
+// identical and both map to $bg-lighter. Beats `html.dark .x:hover` (0,3,1).
+.bga-dropdown-option--hoverable:hover:not(#_) {
+  background: $bg;
+}

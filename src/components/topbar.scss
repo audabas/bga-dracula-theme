@@ -2,13 +2,6 @@
 
 // Top bar, its sub-menu and the player menu (avatar dropdown).
 html {
-  // Sub-menu (e.g. gamelist "all games / favorites"): BGA paints it with
-  // --palette-bga-blue (purple here) under hardcoded white text; a current-line
-  // bar keeps BGA's white/half-white active/inactive items readable.
-  .bga-sub-menu {
-    background: $current-line;
-  }
-
   // two classes to match Svelte's `.x.svelte-hash`
   .bga-dark-mode-toggler.bga-dark-mode-toggler--dark {
     background: $purple;
@@ -19,4 +12,11 @@ html {
     background: $pink;
     color: $bg;
   }
+}
+
+// Sub-menu (e.g. gamelist "all games / favorites"): BGA paints it with
+// --palette-bga-blue (purple here) under hardcoded white text; a current-line
+// bar keeps BGA's white/half-white active/inactive items readable.
+.bga-sub-menu:not(#_) {
+  background: $current-line;
 }

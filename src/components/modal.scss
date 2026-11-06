@@ -1,0 +1,24 @@
+@use "../palette" as *;
+
+// BGA popup modals (Svelte). `:not(#_)` beats their hashed variant rules.
+.bga-popup-modal:not(#_) {
+  background: #{$bg-darker}d9; // backdrop, 85% alpha
+}
+
+// Header: BGA's default is a hardcoded blue gradient, with red and purple
+// variants; the grey variant already follows the base layer, so it is skipped.
+.bga-popup-modal:not([class*="grey"]) .bga-popup-modal__header:not(#_) {
+  background: $purple;
+  color: $bg;
+}
+
+// second :not(#_) to outrank the (1,3,0) default rule above
+.bga-popup-modal--title-bar-red:not(#_) .bga-popup-modal__header:not(#_) {
+  background: $red;
+}
+
+// List management modal: "create a new list" row
+.bga-collection-management__row--blue:not(#_) {
+  background: $purple;
+  color: $bg;
+}
