@@ -1,0 +1,33 @@
+@use "../palette" as *;
+
+// Tournament list items: /tournamentlist and the « Tournois » block of /gamepanel.
+
+// Selected item frame, continued by the details panel next to it (dark blue
+// #194681). `:not(#_)`: the outline rule has three classes to beat.
+.bga-tournament-list-item__border:not(#_),
+.bga-tournaments-browser__panel-settings--has-tournament .bga-page-section__content:not(#_) {
+  border-color: $purple;
+}
+
+.bga-tournament-list-item--arrow-hidden:not(#_) {
+  outline-color: $purple;
+}
+
+// Bottom status bar: "open" blue under a black shade, inline → `$yellow` like
+// the tournament page's "open" band (components/progressbar.scss), dark text.
+// The black shade over the unfilled part (registrations left) is kept.
+$open: '[style*="30, 141, 219"]';
+
+.bga-tournament-list-item #{$open} {
+  background: $yellow !important;
+}
+
+// (its children carry Tailwind `text-white`, layered: any unlayered rule wins)
+.bga-tournament-list-item:has(#{$open}) .bga-tournament-list-item__bottom * {
+  color: $bg;
+}
+
+// Details panel icon disc: orange radial gradient → flat
+.bga-tournament-icon__bg:not(#_) {
+  background-image: radial-gradient(circle, $orange 53%, #0000 0);
+}
