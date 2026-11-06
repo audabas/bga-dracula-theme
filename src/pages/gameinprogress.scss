@@ -1,0 +1,57 @@
+@use "../palette" as *;
+
+// Games in progress (/gameinprogress).
+
+// Shortcut tags (« Tournoi », « Arène », « Jouer », « On vous y attend », and a
+// players tag): border and text in the type's color, filled when active (Svelte,
+// up to (0,3,0)). `--t` = the tag's type color, set by the type rules below
+// (after the base one). Table type colors (glossary): tournament `$pink`, play
+// `$purple`, waiting `$red`. Not in the glossary: arena follows play (BGA's arena
+// palette variable is already `$purple`), players `$cyan`, untyped grey `$comment`.
+.bga-progress-list-tag {
+  --t: #{$comment};
+}
+
+.bga-progress-list-tag--type-tournament {
+  --t: #{$pink};
+}
+
+.bga-progress-list-tag--type-play,
+.bga-progress-list-tag--type-arena {
+  --t: #{$purple};
+}
+
+.bga-progress-list-tag--type-waiting {
+  --t: #{$red};
+}
+
+.bga-progress-list-tag--type-players {
+  --t: #{$cyan};
+}
+
+.bga-progress-list-tag:not(#_) {
+  border-color: var(--t);
+  color: var(--t);
+}
+
+.bga-progress-list-tag--active:not(#_) {
+  background: var(--t);
+  color: $bg;
+}
+
+// Section count and left fade, inline. BGA's script takes the section's color
+// from its palette variables (already Dracula), except grey #6f6f6f for an empty
+// section and dark red #8f3031 for the waiting tables' count.
+.bga-player-progress-list__section {
+  [style*="rgb(143, 48, 49)"] {
+    color: $red !important;
+  }
+
+  [style*="rgb(111, 111, 111)"] {
+    color: $comment !important;
+  }
+
+  [style*="rgba(111, 111, 111"] {
+    background: linear-gradient(90deg, #{$comment}33, #0000 min(400px, 50%)) !important; // 20% alpha
+  }
+}
