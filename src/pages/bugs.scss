@@ -1,0 +1,99 @@
+@use "../palette" as *;
+
+// Bug reports (/bugs, report pages /bug?id=…). Status badges are colored inline
+// from BGA's status table (background, 2px border of a darker shade, white or
+// dark text; none of these values collides with another status's background).
+// Mapped through `--c` (and `--t` for light text) to the nearest palette hue;
+// the neutral ones (awaiting, duplicate/not a bug, works for me, won't
+// fix/rejected) to Dracula greys. Only these known statuses are matched.
+$statuses: (
+  "220, 84, 84": $red, // open
+  "207, 97, 46": $orange, // acknowledged
+  "190, 61, 117": $pink, // confirmed
+  "252, 201, 79": $yellow, // info needed / requested
+  "244, 187, 48": $yellow, // not updated
+  "133, 80, 174": $purple, // claimed
+  "86, 99, 175": $cyan, // waiting for deploy
+  "84, 142, 88": $green, // fixed / implemented
+);
+$neutral-statuses: (
+  "115, 136, 146": $comment, // awaiting
+  "126, 126, 126": $current-line, // duplicate / not a bug
+  "79, 78, 78": $bg-light, // works for me
+  "121, 95, 88": $bg-lighter, // won't fix / rejected
+);
+
+$known: ();
+@each $rgb, $color in $statuses {
+  $known: append($known, '[style*="rgb(#{$rgb})"]', comma);
+
+  [style*="rgb(#{$rgb})"] {
+    --c: #{$color};
+  }
+}
+@each $rgb, $color in $neutral-statuses {
+  $known: append($known, '[style*="rgb(#{$rgb})"]', comma);
+
+  [style*="rgb(#{$rgb})"] {
+    --c: #{$color};
+    --t: #{$fg};
+  }
+}
+
+:is(.bga-bugs-page, .bga-bug-page) span.border-2:is(#{$known}) {
+  background: var(--c) !important;
+  border-color: var(--c) !important;
+  color: var(--t, #{$bg}) !important;
+}
+
+// Quick filters (« Nouveaux rapports », « Rapports ouverts »): BGA's Asmodee red
+// and blue, set inline through palette variables
+.bga-bugs-page {
+  --palette-asmodee-red: #{$red};
+  --palette-asmodee-blue: #{$cyan};
+}
+
+// List search box and report card: grey border, inline
+:is(.bga-bugs-page, .bga-bug-page) [style*="rgba(141, 141, 141)"] {
+  border-color: $comment !important;
+}
+
+// Report table header: `bg-bga-blue` (`$purple`) under Tailwind `text-white`
+// (on the cells and their sort buttons)
+.bga-bugs-page th.bg-bga-blue,
+.bga-bugs-page th.bg-bga-blue button {
+  color: $bg;
+}
+
+// Report page: status band in the status's darker shade with white text → a
+// neutral band (the status is spelled out in it; the list badge keeps its color)
+.bga-bug-page .p-4.font-bold[style*="background-color"] {
+  background: $current-line !important;
+  color: $fg !important;
+}
+
+// Vote buttons: red / green thumbs, and their border through an inline
+// `--border-color` on the button holder
+.bga-bug-page [style*="rgb(228, 36, 33)"] {
+  --border-color: #{$red} !important;
+  color: $red !important;
+}
+
+.bga-bug-page [style*="rgb(137, 165, 56)"] {
+  --border-color: #{$green} !important;
+  color: $green !important;
+}
+
+// Report type tag, pastel inline: translation blue, suggestion yellow, bug purple
+$report-types: (
+  "191, 219, 254": $cyan,
+  "254, 240, 138": $yellow,
+  "233, 213, 255": $purple,
+);
+
+@each $rgb, $color in $report-types {
+  .bga-bug-page span[style*="rgb(#{$rgb})"] {
+    background: $color !important;
+    color: $bg !important;
+  }
+}
