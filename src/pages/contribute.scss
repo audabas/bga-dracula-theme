@@ -1,0 +1,19 @@
+@use "../palette" as *;
+
+// Contribute (/contribute): gift points flip counter, neutral greys (top #222,
+// bottom #393939 under a black split line, #ccc / white digits)
+.flip_counter_card__top,
+.flip_counter_card__bottom {
+  background: $bg-darker;
+  color: $fg;
+}
+
+.flip_counter_card__bottom {
+  background: $bg-light;
+  border-color: $bg-darker;
+}
+
+// Its grey drop shadow reads as a light halo on the dark page
+.flip_counter_card {
+  box-shadow: 3px 3px 2px $bg-darker;
+}
