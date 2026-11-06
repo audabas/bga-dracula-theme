@@ -1,0 +1,19 @@
+@use "../palette" as *;
+
+// Public groups (/grouplist): light-theme Svelte tiles (white 45%, white on
+// hover) with blue names and #666 member counts; `:not(#_)` outranks Svelte.
+.group-list-page__item:not(#_) {
+  background: $bg-light;
+
+  &:hover {
+    background: $current-line;
+  }
+}
+
+.group-list-page__name:not(#_) {
+  color: $cyan;
+}
+
+.group-list-page__meta:not(#_) {
+  color: $comment;
+}
