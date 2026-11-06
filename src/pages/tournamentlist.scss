@@ -1,0 +1,45 @@
+@use "../palette" as *;
+
+// Tournament list (/tournamentlist). Cards: components/tournament.scss.
+
+// « Mes tournois prévus / en cours », « Tournois que j'ai créés », « Mon
+// historique »: BGA sets each tag's color inline, as text + border, or as a
+// fill with #f4f4f4 text when active. Unlike the game filters' category colors
+// (left as data), these are fixed per tag: planned and ongoing take their
+// tournament status color (`$yellow`, `$purple`), created `$cyan`, history
+// `$comment` (the finished `$bg-light` would vanish as text). Only known tags are
+// mapped, so an unknown one keeps BGA's color.
+$my-tournament-tags: (
+  "88, 110, 154": $yellow,
+  "139, 114, 153": $purple,
+  "97, 140, 199": $cyan,
+  "126, 126, 126": $comment,
+);
+
+$known: ();
+@each $rgb, $color in $my-tournament-tags {
+  $known: append($known, '[style*="rgb(#{$rgb})"]', comma);
+}
+
+.bga-tournaments-list__filter-tags .bga-filter-tag {
+  @each $rgb, $color in $my-tournament-tags {
+    &[style*="rgb(#{$rgb})"] {
+      --c: #{$color};
+    }
+  }
+
+  &:is(#{$known}) {
+    color: var(--c) !important;
+    border-color: var(--c) !important;
+  }
+
+  &:is(#{$known}):not([style*="transparent"]) {
+    background: var(--c) !important;
+    color: $bg !important;
+  }
+
+  // active history: light text on the darker `$comment`
+  &[style*="rgb(126, 126, 126)"]:not([style*="transparent"]) {
+    color: $fg !important;
+  }
+}

@@ -19,7 +19,9 @@
 @use "components/tournament";
 @use "components/datechip";
 @use "components/speedselector";
+@use "components/slidingpanel";
 @use "pages/homepage";
 @use "pages/lobby";
 @use "pages/gamelist";
 @use "pages/tournament" as tournament-page; // namespace clash with components/tournament
+@use "pages/tournamentlist";

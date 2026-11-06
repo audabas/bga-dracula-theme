@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Sliding filter panel (/tournamentlist, /gamelist): active filter count on the
+// « Filtres » button, Tailwind `text-white` (layered) on the link color → dark.
+.bga-sliding-top-panel__bottom .bg-current > .text-white {
+  color: $bg;
+}
