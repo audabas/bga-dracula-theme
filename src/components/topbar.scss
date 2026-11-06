@@ -16,7 +16,15 @@ html {
 
 // Sub-menu (e.g. gamelist "all games / favorites"): BGA paints it with
 // --palette-bga-blue (purple here) under hardcoded white text; a current-line
-// bar keeps BGA's white/half-white active/inactive items readable.
-.bga-sub-menu:not(#_) {
+// bar keeps BGA's white/half-white active/inactive items readable. Same for the
+// narrow-width vertical (hamburger) menu's sub-items, and its active item (#eee
+// under the link color).
+.bga-sub-menu:not(#_),
+.bga-vertical :is(.bga-menu-sub-menu-item, .bga-menu-bar-items__menu-item--active):not(#_) {
   background: $current-line;
+}
+
+// Narrow widths (below BGA's `tablet` breakpoint): sub-bar under the top bar (page name): dark-theme greys #242424 → #121212
+.bga-menu-subbar:not(#_) {
+  background: linear-gradient($bg-dark, $bg-darker);
 }
