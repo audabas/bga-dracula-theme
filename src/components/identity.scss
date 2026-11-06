@@ -1,0 +1,36 @@
+@use "../palette" as *;
+
+// Player identity bits shown on many pages: username, avatar ring, presence
+// dot, karma and XP pills. `html` prefix: these are Svelte components whose CSS
+// is injected after ours.
+html {
+  .bga-username {
+    color: $cyan;
+  }
+
+  .bga-player-avatar__ring {
+    background: $comment;
+  }
+
+  .bga-presence-indicator--online {
+    background: $green;
+  }
+
+  .bga-presence-indicator--offline {
+    background: $comment;
+  }
+
+  .bga-presence-indicator--ingame {
+    background: $orange;
+  }
+
+  // Karma pills use bright karma backgrounds (base layer) with .text-white
+  [class*="bg-bga-karma"] {
+    color: $bg;
+  }
+
+  .bga-player-karma-and-xp__xp {
+    background: $bg-darker;
+    color: $yellow;
+  }
+}

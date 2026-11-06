@@ -16,6 +16,9 @@ $colors: (
   $cyan: teal,
 );
 
+// Svelte injects its component CSS after ours at runtime, so equal specificity
+// loses: the `html` prefix adds the extra (0,0,1) needed to win.
+
 // Colors that exist in the legacy family (the others are Svelte-only)
 $legacy-names: blue purple red green yellow gray darkgray;
 
@@ -29,9 +32,9 @@ $legacy-names: blue purple red green yellow gray darkgray;
     $svelte: list.append($svelte, ".bga-button--#{$n}", comma);
   }
   @if list.length($legacy) == 0 {
-    @return ".bga-button:is(#{$svelte})";
+    @return "html .bga-button:is(#{$svelte})";
   }
-  @return ".bgabutton:is(#{$legacy}), .bga-button:is(#{$svelte})";
+  @return "html .bgabutton:is(#{$legacy}), html .bga-button:is(#{$svelte})";
 }
 
 $all: ();

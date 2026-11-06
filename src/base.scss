@@ -92,6 +92,11 @@ html.dark {
   --palette-bga-karma-exceptional-light: #{$bg-light};
   --palette-bga-karma-bad-light: #{$bg-light};
 
+  // Stock Tailwind colors the official dark theme leaves light
+  --color-gray-400: #{$comment};
+  --color-gray-500: #{$comment};
+  --color-red-500: #{$red};
+
   // Button fills are set by selector in components/button.scss
   --bga-button-secondary-outline: #{$comment};
 }
