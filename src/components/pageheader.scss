@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Legacy page header (profile, groups…): separator above its tab menu
+.pageheader_menu {
+  border-color: $current-line;
+}

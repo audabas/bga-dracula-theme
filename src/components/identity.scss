@@ -41,3 +41,58 @@ html {
     color: $yellow;
   }
 }
+
+// Legacy XP badge (profile header…): black/grey with CSS-triangle ends
+.xp_container {
+  background: $bg-darker;
+  border-color: $comment;
+  color: $yellow;
+
+  .arrow {
+    border-left-color: $bg-darker;
+  }
+
+  .arrowl {
+    border-right-color: $bg-darker;
+  }
+
+  .arrowback {
+    border-left-color: $comment;
+  }
+
+  .arrowbackl {
+    border-right-color: $comment;
+  }
+}
+
+// Reputation (karma) bars: hardcoded per-level greens/reds on light tracks.
+// Same mapping as the base layer's karma variables.
+$reputation: (
+  $green: exceptional perfect verygood good,
+  $yellow: average,
+  $orange: notgood,
+  $red: bad verybad,
+);
+
+.progressbar[class*="reputation_"] {
+  background: $bg-light;
+
+  :is(.progressbar_label, .progressbar_content .progressbar_valuename) {
+    color: $bg;
+  }
+}
+
+@each $color, $levels in $reputation {
+  $sel: ();
+  @each $l in $levels {
+    $sel: append($sel, ".reputation_#{$l}", comma);
+  }
+  .progressbar:is(#{$sel}) :is(.progressbar_label, .progressbar_content) {
+    background: $color;
+  }
+}
+
+// Level name shown on the track when the bar is short
+.progressbar_reputation .progressbar_valuename {
+  color: $fg;
+}
