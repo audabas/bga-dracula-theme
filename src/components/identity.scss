@@ -1,15 +1,17 @@
 @use "../palette" as *;
 
 // Player identity bits shown on many pages: username, avatar ring, presence
-// dot, karma and XP pills. `html` prefix: these are Svelte components whose CSS
-// is injected after ours.
+// dot, karma and XP pills. The avatar ring is left alone: beating its Svelte
+// rule without also overriding the Premium gold ring costs too much.
 html {
-  .bga-username {
+  // Both are hardcoded teal in common.css
+  .bga-username,
+  .playername {
     color: $cyan;
   }
 
-  .bga-player-avatar__ring {
-    background: $comment;
+  .playername:hover {
+    color: $pink;
   }
 
   .bga-presence-indicator--online {

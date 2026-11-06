@@ -1,0 +1,27 @@
+@use "../palette" as *;
+
+// Search panel (omnibar): opens when clicking into the top bar search field.
+// Its Svelte rules are `.x.svelte-hash` with a single stable class, so
+// `:not(#_)` (ID-level specificity) is the cheapest way to win.
+.bga-omni-bar-results:not(#_) {
+  background: #{$bg-darker}d9; // 85% alpha, shorter than rgba()
+}
+
+.omnibar-title:not(#_) {
+  color: $fg;
+}
+
+// Recent-search / result chips: bright game (purple) and player (cyan) chips
+.search-item:not(#_) {
+  color: $bg;
+}
+
+// Player and group cards
+.bga-player-tag-holder:not(#_),
+.bga-omni-bar-panel-groups__group:not(#_) {
+  background: $bg-light;
+}
+
+.bga-omni-bar-panel-groups__group-subtitle:not(#_) {
+  color: $comment;
+}
