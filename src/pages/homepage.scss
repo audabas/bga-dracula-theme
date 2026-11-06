@@ -1,0 +1,15 @@
+@use "../palette" as *;
+
+// Homepage (/). Hero tags, tournament bars and news overlays sit on game art
+// or carry per-game/per-category colors: left as is.
+
+// Service status banner: BGA sets its color inline (green when all is well)
+[href$="serverstatus"][style*="176, 7"] {
+  background: $green !important;
+  color: $bg;
+}
+
+// Pre-footer "copy link" box
+.bga-copy-text-box__copy-display:not(#_) {
+  border-color: $current-line;
+}

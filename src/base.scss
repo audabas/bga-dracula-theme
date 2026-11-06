@@ -101,6 +101,11 @@ html.dark {
   --bga-button-secondary-outline: #{$comment};
 }
 
+// Tailwind utilities the official dark theme forgot (it remaps .bg-white only)
+.bg-white\/90 {
+  background: #{$bg}e6; // 90% alpha
+}
+
 // Light theme is unsupported: tell the player to switch.
 html:not(.dark) body::before {
   content: "Dracula theme: enable BGA's dark theme · Thème Dracula : activez le thème sombre de BGA";
