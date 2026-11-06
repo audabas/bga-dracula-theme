@@ -24,7 +24,8 @@ html {
   background: $current-line;
 }
 
-// Narrow widths (below BGA's `tablet` breakpoint): sub-bar under the top bar (page name): dark-theme greys #242424 → #121212
+// Narrow widths (below BGA's `tablet` breakpoint): sub-bar under the top bar
+// (page name), dark-theme greys #242424 → #121212
 .bga-menu-subbar:not(#_) {
   background: linear-gradient($bg-dark, $bg-darker);
 }
