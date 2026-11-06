@@ -4,3 +4,8 @@
 .pageheader_menu {
   border-color: $current-line;
 }
+
+// Active (and hovered, at 50%) tab underline: BGA teal #11a9bb
+.pageheader_menuitembar {
+  background: $purple;
+}

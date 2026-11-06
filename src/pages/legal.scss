@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Legal pages (/legal): plain-language callout, amber #ffc107 at 35% (Dracula
+// yellow is brighter, hence less alpha)
+.legal_expl {
+  background: #{$yellow}40; // 25% alpha
+}
