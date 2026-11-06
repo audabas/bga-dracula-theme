@@ -1,0 +1,5 @@
+// Entry point: imports only. Each partial does `@use "../palette" as *;` itself
+// so it compiles standalone (scripts/check-size.js measures each one).
+//
+// Order: base first, then shared components, then pages, then games.
+// Add a line here when a partial is created; delete the partial if it ends up empty.

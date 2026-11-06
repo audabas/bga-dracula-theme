@@ -1,0 +1,23 @@
+// Dracula palette (https://draculatheme.com/spec). The only colors the theme may use.
+// Sass variables only: they compile to hex and emit no CSS on their own.
+
+// Backgrounds, darkest to lightest (extended shades from Dracula's editor themes)
+$bg-darker: #191a21;
+$bg-dark: #21222c;
+$bg: #282a36;
+$bg-light: #343746;
+$bg-lighter: #424450;
+$current-line: #44475a; // also Dracula's selection color
+
+// Text
+$fg: #f8f8f2;
+$comment: #6272a4; // secondary text, borders
+
+// Accents and their roles
+$purple: #bd93f9; // primary accent: primary buttons, active tab, focus
+$cyan: #8be9fd; // links
+$pink: #ff79c6; // link/button hover, badges
+$green: #50fa7b; // success, online, rating up
+$red: #ff5555; // error, danger, rating down
+$orange: #ffb86c; // warning
+$yellow: #f1fa8c; // unread notifications, highlight
