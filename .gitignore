@@ -2,3 +2,10 @@
 node_modules
 CLAUDE.md
 .claude
+# Agent / Claude files (kept local)
+AGENTS.md
+docs/agents/
+.scratch/
+GLOSSARY.md
+GLOSSARY-MAP.md
+docs/adr/
