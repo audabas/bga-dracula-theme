@@ -1,0 +1,30 @@
+@use "../palette" as *;
+
+// Building colors (panel counters `.stat-N`, log names `.buildingtype_N`) and coin
+// colors (log `.moneytype_N`) are dark blue, red, brown, green and purple,
+// unreadable on the dark panels and log: same hues from the palette.
+// The game colors `.alhambra-stats .alhambra-stat.stat-N` (0,3,0): `:not(#_)` outranks it.
+.bgagame-alhambra {
+  .stat-1:not(#_),
+  .buildingtype_1,
+  .moneytype_3 {
+    color: $cyan;
+  }
+  .stat-2:not(#_),
+  .buildingtype_2 {
+    color: $red;
+  }
+  .stat-3:not(#_),
+  .buildingtype_3 {
+    color: $orange;
+  }
+  .stat-5:not(#_),
+  .buildingtype_5,
+  .moneytype_2 {
+    color: $green;
+  }
+  .stat-6:not(#_),
+  .buildingtype_6 {
+    color: $purple;
+  }
+}
