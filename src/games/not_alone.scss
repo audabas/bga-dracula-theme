@@ -1,0 +1,12 @@
+@use "../palette" as *;
+
+.bgagame-notalone {
+  // Zone headings (Artemia, discard) are black on the dark page.
+  #game_play_area h2 {
+    color: $fg;
+  }
+  // "Assimilation token" in the log is dark purple.
+  .assimilationCounterName {
+    color: $purple;
+  }
+}
