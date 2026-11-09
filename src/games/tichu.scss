@@ -1,0 +1,9 @@
+@use "../palette" as *;
+
+// Tichu has no dark mode: each of its color themes (`.themeN`) sets light
+// surface variables (player areas, panels, log entries) under BGA's white
+// text. Dark palette values for all themes.
+.bgagame-tichu {
+  --bg-color-light: #{$bg-lighter};
+  --bg-color-lighter: #{$bg-light};
+}
