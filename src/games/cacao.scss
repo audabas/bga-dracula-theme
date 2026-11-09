@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// The score sits on a gold coin, under BGA's white text.
+.bgagame-cacao .player_score_value > span {
+  color: $bg-darker;
+}
