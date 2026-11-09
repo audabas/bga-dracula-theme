@@ -1,0 +1,14 @@
+@use "../palette" as *;
+
+// Clan stats on the player panels are dark red, blue and gray on the dark panel.
+.bgagame-bloodrage {
+  .br_board_stat_rage p {
+    color: $red;
+  }
+  .br_board_stat_axe p {
+    color: $cyan;
+  }
+  .br_board_stat_horn p {
+    color: $fg;
+  }
+}
