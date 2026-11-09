@@ -1,15 +1,25 @@
 @use "../palette" as *;
 
-// Daybreak has no dark mode. Its tabs, card badges and vote pills stay white
-// under BGA's white text: dark text keeps them light (and keeps a black player
-// color readable in its tab). Thermometer labels are dark pink on the dark panel.
+// Daybreak has no dark mode.
 .bgagame-daybreak {
-  .dbk-tab,
+  // White tabs under BGA's white text: darkened, as the previous theme did
+  // (a black player name in a tab is shown light by components/playercolor).
+  .dbk-tab {
+    background-color: $bg-light;
+
+    &.dbk-tab-selected,
+    &:hover {
+      background-color: $bg-lighter;
+    }
+  }
+
+  // Small white card badges and vote pills: dark text.
   .dbk-card-qr,
   .dbk-voteBlock {
     color: $bg-darker;
   }
 
+  // Dark pink on the dark panel.
   .dbk-thermometer-row {
     color: $pink;
   }
