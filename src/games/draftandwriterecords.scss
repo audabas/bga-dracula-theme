@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Light surfaces in the play area (shortcut menu, sheets) get BGA's white text.
+// The previous theme darkened all of `.bgagame-draftandwriterecords`, which
+// also hit the status bar: scoped to the play area.
+.bgagame-draftandwriterecords #game_play_area {
+  color: $bg-darker;
+}
