@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Power cards are parchment under BGA's white text.
+.bgagame-elgrande .stockitem {
+  color: $bg-darker;
+}
