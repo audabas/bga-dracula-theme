@@ -1,0 +1,12 @@
+@use "../palette" as *;
+
+// Log values carry inline colors; dark purple and red are too dark on the dark
+// log. Only `!important` beats an inline style.
+.bgagame-solstis .st_log_value {
+  &[style*="#5e2a85"] {
+    color: $purple !important;
+  }
+  &[style*="#f01a20"] {
+    color: $red !important;
+  }
+}
