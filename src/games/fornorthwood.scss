@@ -1,0 +1,14 @@
+@use "../palette" as *;
+
+.bgagame-fornorthwood {
+  // White cards under BGA's white text (the previous theme darkened the whole
+  // game's text, which would also hit its dark bands).
+  .card {
+    color: $bg-darker;
+  }
+
+  // The Claws suit is inline `color:#3c3c3c` in the log, dark on dark.
+  [style^="color:#3c3c3c"] {
+    color: $fg !important;
+  }
+}
