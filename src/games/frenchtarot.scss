@@ -1,0 +1,34 @@
+@use "../palette" as *;
+
+.bgagame-frenchtarot {
+  // Black and blue suits in the log, dark on dark.
+  .club-color,
+  .spade-color {
+    color: $fg;
+  }
+  .trump-color {
+    color: $cyan;
+  }
+
+  // The "see the round's results" log entry gets an inline black color.
+  .score_open_window {
+    color: $cyan;
+  }
+
+  // Score table: translucent white header/footer and gray rows under BGA's
+  // white text, and dark green/red scores (`!important` in the game).
+  #score_table {
+    :is(thead, tfoot) tr > * {
+      background-color: $bg-light;
+    }
+    tbody tr:nth-of-type(2n) > * {
+      background-color: $bg-dark;
+    }
+  }
+  .green {
+    color: $green !important;
+  }
+  .red {
+    color: $red !important;
+  }
+}
