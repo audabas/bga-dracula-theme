@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Scoundrel card names and texts sit on light sky art under BGA's white text.
+.bgagame-threethousandscoundrels .scoundrel {
+  color: $bg-darker;
+}
