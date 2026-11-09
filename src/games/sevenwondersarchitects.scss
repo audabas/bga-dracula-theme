@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// The active player's board turns beige under BGA's white text.
+.bgagame-sevenwondersarchitects .stw_activepl {
+  color: $bg-darker;
+}
