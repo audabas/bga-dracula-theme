@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Score card values sit in white boxes under BGA's white text.
+.bgagame-supermegaluckybox .smlb_scorecard {
+  color: $bg-darker;
+}
