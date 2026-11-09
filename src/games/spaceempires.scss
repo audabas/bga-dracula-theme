@@ -1,0 +1,17 @@
+@use "../palette" as *;
+
+// Space Empires veils BGA's frame in translucent white (status bar, sections,
+// boxes) and its script paints the status bar white inline, all under BGA's
+// white text.
+html .bgagame-spaceempires :is(.pageheader, .pagesection, .pagesection h2, .roundedbox, .whiteblock) {
+  background-color: rgba($bg, 0.75);
+}
+.bgagame-spaceempires {
+  :is(#page-title, #pagemaintitletext) {
+    background: var(--game-palette-bga-gray-244) !important;
+  }
+  // Info bars get an inline light gray.
+  .SE4XinfoBar {
+    color: $bg-darker;
+  }
+}
