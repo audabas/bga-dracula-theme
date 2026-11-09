@@ -1,0 +1,12 @@
+@use "../palette" as *;
+
+// Card names in the log carry inline family colors; the dark indigo and dark
+// red ones vanish on the dark log. Only `!important` beats an inline style.
+.bgagame-valeofeternity .ve_log_cardname {
+  &[style*="#342e5c"] {
+    color: $purple !important;
+  }
+  &[style*="#832628"] {
+    color: $red !important;
+  }
+}
