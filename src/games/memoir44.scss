@@ -1,0 +1,16 @@
+@use "../palette" as *;
+
+// Memoir '44 has no dark mode.
+.bgagame-memoir {
+  // Its beige log entries keep BGA's white text: back to our log color.
+  #logs .roundedbox {
+    background-color: $bg-lighter;
+  }
+  #logs .timestamp {
+    color: $comment;
+  }
+  // Hex labels and the deck count sit on white art (previous theme's fix).
+  #m44-container {
+    color: $bg-darker;
+  }
+}
