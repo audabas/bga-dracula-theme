@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Pile labels on the light parchment banners and the green garden tray.
+.bgagame-abandonallartichokes .artichoke_tray_description {
+  color: $bg-darker;
+}
