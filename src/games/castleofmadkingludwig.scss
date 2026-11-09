@@ -1,0 +1,16 @@
+@use "../palette" as *;
+
+// The game has no dark mode: its translucent white counters, help buttons and
+// help popup get BGA's white text (previous theme's fix). `html` breaks the
+// specificity ties with the game's own rules.
+html {
+  .ca_board .ca_counter,
+  .ca_playerInfo .ca_counter_bc {
+    background-color: rgba($current-line, 0.5);
+  }
+
+  .ca_btn_choice_help,
+  .aal-popup-overlay .aal-popup-content {
+    background: $bg-light;
+  }
+}
