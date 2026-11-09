@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Card names and texts sit on light sand art under BGA's white text.
+.bgagame-targi .card {
+  color: $bg-darker;
+}
