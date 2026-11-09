@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Numbers written on the pyramid's white bricks get BGA's white text.
+.bgagame-rolltothetopjourneys .field_num {
+  color: $bg-darker;
+}
