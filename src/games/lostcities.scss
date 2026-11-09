@@ -1,0 +1,19 @@
+@use "../palette" as *;
+
+.bgagame-lostcities {
+  // Expedition colors in the log are inline dark purple, green and blue: only
+  // `!important` beats an inline style.
+  .logicon_value_purple {
+    color: $purple !important;
+  }
+  .logicon_value_green {
+    color: $green !important;
+  }
+  .logicon_value_blue {
+    color: $cyan !important;
+  }
+  // Round counter above the deck, brown on the dark page.
+  #round_count {
+    color: $orange;
+  }
+}
