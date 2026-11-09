@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Handwritten sheet values and the white score sheet modal get BGA's white
+// text.
+.bgagame-welcometonewlasvegas :is(.handwritten, .modal-content) {
+  color: $bg-darker;
+}
