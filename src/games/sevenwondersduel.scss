@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// The science column's header ("5/6 symbols") is dark green on the dark page.
+.bgagame-sevenwondersduel .Green .building_header_small_container {
+  color: $green;
+}
