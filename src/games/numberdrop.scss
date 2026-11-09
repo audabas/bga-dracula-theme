@@ -1,0 +1,13 @@
+@use "../palette" as *;
+
+// Number Drop forces a white status bar and white player boards
+// (`!important`) unless its own dark-mode switch is on: back to the variables
+// every other game uses.
+.bgagame-numberdrop {
+  #page-title {
+    background-color: var(--game-palette-bga-gray-244) !important;
+  }
+  .player-board {
+    background: var(--game-bga-player-panel-background) !important;
+  }
+}
