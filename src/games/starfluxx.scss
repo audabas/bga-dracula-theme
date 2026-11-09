@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// As in Fluxx: the discard pile's show/hide link sits on the white top card,
+// where our cyan link color vanishes. Card text is already black.
+.bgagame-starfluxx .flx-toggle a {
+  color: $bg-darker;
+}
