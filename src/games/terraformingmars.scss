@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Mid-gray player boards and the light card stack labels get BGA's white text
+// (the previous theme darkened the whole game's text, which also hit the
+// status bar).
+.bgagame-terraformingmars :is(.player-board, .groupline, .stack_label, .stack_detail_txt) {
+  color: $bg-darker;
+}
