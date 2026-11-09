@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// House numbers and score counters written on the white sheet, and the plan
+// status badges on the light panels, get BGA's white text.
+.bgagame-welcometo :is(.house-number, .score-counter, [class^="plan-status-"]) {
+  color: $bg-darker;
+}
