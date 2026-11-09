@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Santorini veils its status bar and log entries in translucent white over
+// the sky art, under BGA's white text: a translucent dark veil instead. `html`
+// outranks the game's `.current_player_is_active #page-title`.
+html .bgagame-santorini :is(#page-title, .log .roundedbox) {
+  background: rgba($bg, 0.85);
+}
