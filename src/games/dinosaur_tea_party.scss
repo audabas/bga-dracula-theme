@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// The "Guess" bar on each player panel is white under BGA's white text.
+.bgagame-dinosaurteaparty .guess_text {
+  color: $bg-darker;
+}
