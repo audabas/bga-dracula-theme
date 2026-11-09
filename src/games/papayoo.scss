@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Trick counts sit in the light player slots under BGA's white text.
+.bgagame-papayoo .player_info {
+  color: $bg-darker;
+}
