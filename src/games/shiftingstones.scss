@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Panel counters and the deck, discard and hand labels are black on the dark
+// page.
+.bgagame-shiftingstones :is(.doubleempty, :is(#deck, #disc, #mycard) span) {
+  color: $fg;
+}
