@@ -1,0 +1,23 @@
+@use "../palette" as *;
+
+// Earth has no dark mode: its white counters, panel pills, option panel,
+// shortcut and hand menus, score pad and popins keep their light look under
+// BGA's white text.
+// Dark text on them (the previous theme inverted or darkened them instead).
+.bgagame-earth {
+  .ea-counter,
+  .ea-player-panel-pill:not(.ea-objective-button), // those are dark blue
+  .ea-option-panel,
+  #ea-shortcut-area,
+  #ea-area-card-hand-config,
+  #ea-area-card-hand-config-control,
+  #ea-scorepad,
+  .custom_popin {
+    color: $bg-darker;
+  }
+
+  // Black, on the page background.
+  .ea-show-icon-help {
+    color: $fg;
+  }
+}
