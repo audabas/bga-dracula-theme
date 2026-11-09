@@ -1,0 +1,15 @@
+@use "../palette" as *;
+
+.bgagame-viticulture {
+  // Board and player board labels, deck counts, cards, worker names, the
+  // turn header and the translucent white counters get BGA's white text on
+  // light art (previous theme's fix, plus the counters).
+  :is(.label_boardLabels, .label_playerBoardLabels, .playerboard .building_slot, .playerBoardLabels, .deck_count, .card, .papa, .mama, #turn_header, .cc_counter) {
+    color: $bg-darker;
+  }
+  // The played-cards history toggle is forced black (`!important`) on the
+  // dark page.
+  :is(#toggle_history_exandable, #history_exandable_count) {
+    color: $fg !important;
+  }
+}
