@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Area labels and the deck count are near-black on the dark page.
+.bgagame-lettertycoon :is(.lettertycoon_deck_info, .lettertycoon_area_label) {
+  color: $fg;
+}
