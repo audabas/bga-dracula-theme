@@ -1,0 +1,10 @@
+@use "../palette" as *;
+
+// The game's near-black text color (`--gnfd_textcolor:#303030`: headers, deck
+// counts) sits on the dark page, as do card tooltips (previous theme's fix).
+.bgagame-gonutsfordonuts .gnfd_container {
+  --gnfd_textcolor: #{$fg};
+}
+.gnfd_tooltip-text {
+  color: $fg;
+}
