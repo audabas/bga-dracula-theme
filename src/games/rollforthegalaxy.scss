@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Tile titles (light gray bars) and the white shipping choice boxes get BGA's
+// white text.
+.bgagame-rollforthegalaxy :is(.tile_title, #shipping_choice_consume, #shipping_choice_trade) {
+  color: $bg-darker;
+}
