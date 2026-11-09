@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// The new-edition popin's buttons are light orange under BGA's white text.
+// The popin lives outside `.bgagame-catan`; the class is the game's own.
+.cat_btn_wb {
+  color: $bg-darker;
+}
