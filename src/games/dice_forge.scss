@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// The round counter above the board is black on the dark background.
+.bgagame-diceforge #nb-turns-container {
+  color: $fg;
+}
