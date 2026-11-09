@@ -1,0 +1,12 @@
+@use "../palette" as *;
+
+.bgagame-kingdombuilder {
+  // Objective cards are parchment under BGA's white text.
+  #objectives .objective {
+    color: $bg-darker;
+  }
+  // Remaining settlements count, black on the dark panel.
+  .player-settlements-counter {
+    color: $fg;
+  }
+}
