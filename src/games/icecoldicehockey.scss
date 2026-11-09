@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Period and card count are dark blue on the dark background.
+.bgagame-icecoldicehockey :is(.normalPeriod, #period) {
+  color: $purple;
+}
