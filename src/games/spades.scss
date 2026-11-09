@@ -1,0 +1,12 @@
+@use "../palette" as *;
+
+.bgagame-spades {
+  // Bid and trick counts sit on light name tags (previous theme's fix).
+  :is(.bid_box, .board_tricks) {
+    color: $bg-darker;
+  }
+  // Black suits named in the log.
+  :is(.card-name-color--1, .card-name-color--3) {
+    color: $fg;
+  }
+}
