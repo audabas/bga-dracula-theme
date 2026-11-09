@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Player resource and building boxes are white under BGA's white text
+// (previous theme's fix).
+.bgagame-deus .deus_repeat_counter_section {
+  background-color: $bg-light;
+}
