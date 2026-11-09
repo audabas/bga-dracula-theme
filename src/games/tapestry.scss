@@ -1,0 +1,27 @@
+@use "../palette" as *;
+
+// Tapestry has no dark mode.
+.bgagame-tapestry {
+  // Beige player boards and log entries under BGA's white text: back to the
+  // standard panel colors and our log color.
+  .player-board {
+    background-color: var(--game-bga-player-panel-background);
+
+    &.roundedboxdisabled {
+      background-color: var(--game-bga-player-panel-background-disabled);
+    }
+  }
+  #logs .log_replayable .roundedbox {
+    background-color: $bg-lighter;
+  }
+  // Track names in the log, dark blue, green and red on the dark log.
+  .track_color_1 {
+    color: $cyan;
+  }
+  .track_color_2 {
+    color: $green;
+  }
+  .track_color_3 {
+    color: $red;
+  }
+}
