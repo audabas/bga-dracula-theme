@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Bank amounts (beige art) and the gray panel labels (light gray panels) are
+// a mid gray that barely shows.
+.bgagame-puertorico :is(#bank span, .tiles_label) {
+  color: $bg-darker;
+}
