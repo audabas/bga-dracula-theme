@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Section headings sit on beige panels under BGA's white text.
+.bgagame-vultureculture .heading {
+  color: $bg-darker;
+}
