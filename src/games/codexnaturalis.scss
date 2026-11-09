@@ -1,0 +1,15 @@
+@use "../palette" as *;
+
+// Log card names carry inline `color:green|purple|blue` (the kingdoms), dark
+// on the dark log: `!important` is the only way past an inline style.
+.bgagame-codexnaturalis .roundedbox {
+  [style*="color:green"] {
+    color: $green !important;
+  }
+  [style*="color:purple"] {
+    color: $purple !important;
+  }
+  [style*="color:blue"] {
+    color: $cyan !important;
+  }
+}
