@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// The light main board, beige player panels and score markers get BGA's white
+// text (previous theme's text fix; its panel darkening is dropped since the
+// panel icons are drawn for the beige).
+.bgagame-ultimaterailroads :is(#thething, .player_board_inner, .scoring_marker) {
+  color: $bg-darker;
+}
