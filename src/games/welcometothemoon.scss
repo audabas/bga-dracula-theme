@@ -1,0 +1,17 @@
+@use "../palette" as *;
+
+.bgagame-welcometothemoon {
+  // Numbers written on the white sheet, score slots, card numbers on their
+  // light icons and panel statuses get BGA's white text (previous theme's
+  // fix, plus card numbers).
+  :is(.wttm-slot.slot-score, .wttm-slot.slot-subscore, .scribble-number, .log-number, .card-number, .wttm-player-panel .numbers-status) {
+    color: $bg-darker;
+  }
+  // Log timestamps are black on the dark log.
+  .timestamp:not(#_) {
+    color: $comment;
+  }
+}
+.welcometothemoon_popin_container {
+  color: $bg-darker;
+}
