@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// The play area (team sheets, screens) is light paper under BGA's white text.
+// The previous theme darkened all of `.bgagame-decrypto`, which also hit the
+// status bar: scoped to the play area.
+.bgagame-decrypto #game_play_area {
+  color: $bg-darker;
+}
