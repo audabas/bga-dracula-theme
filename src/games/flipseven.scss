@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// The deck's card count sits in a white badge under BGA's white text.
+.bgagame-flipseven .f7_card_count {
+  color: $bg-darker;
+}
