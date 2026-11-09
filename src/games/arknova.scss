@@ -1,0 +1,35 @@
+@use "../palette" as *;
+
+// Ark Nova has no dark mode: its light panels and badges get BGA's white text,
+// and its log text stays black on our dark log.
+.bgagame-arknova {
+  // Large light panels: darkened, as the previous theme did.
+  .icons-summary,
+  .player-board-cards,
+  .player-board-action-cards,
+  #base-projects-holder,
+  #projects-holder {
+    background: $bg-light !important;
+  }
+
+  // Small light badges: dark text.
+  .scoringHandCount-holder,
+  .space-counter,
+  .player-board-sizes-counters {
+    color: $bg-darker;
+  }
+
+  .ark-log-card-name {
+    color: $fg;
+  }
+  // The game sets `#logs .log .timestamp` (1,2,0).
+  .timestamp:not(#_) {
+    color: $comment;
+  }
+  .level-I {
+    color: $cyan;
+  }
+  .level-II {
+    color: $pink;
+  }
+}
