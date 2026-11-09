@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Board name tags, fire counters and discard captions are light art under
+// BGA's white text.
+.bgagame-livingforest :is(.lvf_playerboard_name, .lvf_fire_counter_value, .lvf_discard_caption) {
+  color: $bg-darker;
+}
