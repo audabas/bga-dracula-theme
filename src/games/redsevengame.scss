@@ -1,0 +1,24 @@
+@use "../palette" as *;
+
+// Card colors named in the log are dark shades on the dark log: the palette's
+// matching hues (indigo and violet as purple and pink).
+.bgagame-redsevengame {
+  .color_red {
+    color: $red;
+  }
+  .color_orange {
+    color: $orange;
+  }
+  .color_green {
+    color: $green;
+  }
+  .color_blue {
+    color: $cyan;
+  }
+  .color_indigo {
+    color: $purple;
+  }
+  .color_violet {
+    color: $pink;
+  }
+}
