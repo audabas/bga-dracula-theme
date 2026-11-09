@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// The board is white art: card headers, the mystery card's "?" and the score
+// counter kept BGA's white text.
+.bgagame-justone #board {
+  color: $bg-darker;
+}
