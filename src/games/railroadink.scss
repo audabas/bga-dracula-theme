@@ -1,0 +1,16 @@
+@use "../palette" as *;
+
+.bgagame-railroadink {
+  // The game paints the status bar (`!important`) and player boards light blue
+  // (red in the red edition): back to the variables every other game uses.
+  #page-title {
+    background-color: var(--game-palette-bga-gray-244) !important;
+  }
+  .player-board {
+    background-color: var(--game-bga-player-panel-background);
+  }
+  // Scores and round numbers on the light board (previous theme's fix).
+  :is(.score, .round-number) {
+    color: $bg-darker;
+  }
+}
