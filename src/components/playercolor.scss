@@ -1,0 +1,10 @@
+@use "../palette" as *;
+
+// Games write player names in the player's color as an inline style. A black
+// player (`color:#000000`, BGA's player-color format) vanishes on the dark
+// background: shown light instead (user decision 2026-11-09). Other player
+// colors are kept. `^=` avoids matching `border-color`/`background-color`.
+// Only `!important` beats an inline style.
+.game_interface :is([style^="color:#000000"], [style^="color: #000000"]) {
+  color: $fg !important;
+}
