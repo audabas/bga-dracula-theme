@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// A player's bid zone turns beige once they pass, under BGA's white text:
+// keep it set apart, but dark.
+.bgagame-forsale .player_bid_zone_disabled {
+  background-color: $bg-darker;
+}
