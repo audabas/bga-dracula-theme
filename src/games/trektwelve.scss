@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Yellow dice faces show BGA's white text.
+.bgagame-trektwelve .dice.yellow {
+  color: $bg-darker;
+}
