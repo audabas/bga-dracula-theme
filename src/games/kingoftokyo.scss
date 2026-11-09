@@ -1,0 +1,13 @@
+@use "../palette" as *;
+
+.bgagame-kingoftokyo .player-board {
+  // Eliminated players' boards turn light gray under white text: keep them set
+  // apart, but dark (as in BANG!).
+  &.eliminated-player {
+    --game-bga-player-panel-background: #{$bg-darker};
+  }
+  // Score and star are a dull blue on the dark panel.
+  :is(.fa-star, .player_score .player_score_value) {
+    color: $cyan;
+  }
+}
