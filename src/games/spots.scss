@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Log timestamps are near-black on the dark log. `:not(#_)` outranks the
+// game's log rules.
+.bgagame-spots .timestamp:not(#_) {
+  color: $comment;
+}
