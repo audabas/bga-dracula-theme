@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Cards and the ivory view-toggle buttons (city names, major lines…) get
+// BGA's white text.
+.bgagame-railwaysoftheworld :is(.stockitem, .gameStates_3 > div) {
+  color: $bg-darker;
+}
