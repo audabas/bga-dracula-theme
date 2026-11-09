@@ -1,0 +1,13 @@
+@use "../palette" as *;
+
+.bgagame-rememberwhen {
+  // Inactive tabs keep the game's black text on the dark page (the active tab
+  // is beige and stays as is).
+  .tablinks:not(.active) {
+    color: $fg;
+  }
+  // Sentence words on their light cards (previous theme's fix).
+  .text {
+    color: $bg-darker;
+  }
+}
