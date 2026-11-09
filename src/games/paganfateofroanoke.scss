@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// The player board's task list is light parchment under BGA's white text.
+.bgagame-paganfateofroanoke .playerBoardTasks {
+  color: $bg-darker;
+}
