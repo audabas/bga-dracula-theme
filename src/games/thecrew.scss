@@ -1,0 +1,22 @@
+@use "../palette" as *;
+
+.bgagame-thecrew {
+  // The task panel and player tables are translucent white: the heading and
+  // the AI player's name (invalid inline color) keep BGA's white text.
+  :is(#tasks, .player-table-name) {
+    color: $bg-darker;
+  }
+  // Card colors in the log (`#logs span.card-value.X`, (1,2,1)): black, blue
+  // and green are too dark on the dark log.
+  .card-value {
+    &.black:not(#_) {
+      color: $fg;
+    }
+    &.blue:not(#_) {
+      color: $cyan;
+    }
+    &.green:not(#_) {
+      color: $green;
+    }
+  }
+}
