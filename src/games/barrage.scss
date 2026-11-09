@@ -1,0 +1,28 @@
+@use "../palette" as *;
+
+// Barrage has no dark mode: its light surfaces get BGA's white text.
+.bgagame-barrage {
+  // The game forces `#page-title{background-color:#ebeaea!important}`: back to
+  // the variable every other game's status bar uses.
+  #page-title {
+    background-color: var(--game-palette-bga-gray-244) !important;
+  }
+
+  .contract-counter {
+    color: $bg-darker;
+  }
+}
+
+// Game tour popin (previous theme's fix). `:not(#_)` outranks the game's
+// selectors, up to `#popin_showTour #tour-slider-container .slide .bubble`.
+.barrageTour_popin:not(#_) {
+  background-color: $bg;
+}
+#popin_showTour {
+  #tour-slider-container .bubble:not(#_) {
+    background-color: $bg-light;
+  }
+  #tour-slide-footer:not(#_) {
+    background-color: $bg-dark;
+  }
+}
