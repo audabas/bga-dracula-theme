@@ -11,6 +11,12 @@
   .contract-counter {
     color: $bg-darker;
   }
+
+  // The owner label sits on its own beige plate: the black player (#1b1b1b)
+  // stays dark there, against components/playercolor.
+  .company-owner[style^="color:#1b1b1b"] {
+    color: $bg-darker !important;
+  }
 }
 
 // Game tour popin (previous theme's fix). `:not(#_)` outranks the game's

@@ -1,10 +1,32 @@
 @use "../palette" as *;
 
-// Games write player names in the player's color as an inline style. A black
-// player (`color:#000000`, BGA's player-color format) vanishes on the dark
-// background: shown light instead (user decision 2026-11-09). Other player
-// colors are kept. `^=` avoids matching `border-color`/`background-color`.
-// Only `!important` beats an inline style.
-.game_interface :is([style^="color:#000000"], [style^="color: #000000"]) {
+// Games write player names in the player's color as an inline style: from
+// templates as `color:#rrggbb` (BGA's player-color format), or from JS, which
+// serializes to `…; color: rgb(r, g, b);`. A black or near-black player
+// vanishes on the dark background: shown light instead (user decisions
+// 2026-11-09). Other player colors are kept. Near-black values seen on live
+// tables (#080404 Vale of Eternity, #111111 Scythe, #1b1b1b Barrage, #3c3c3c
+// For Northwood), plus the plain greys in between. `^=` and the `; ` prefix
+// avoid matching `border-color`/`background-color`. Only `!important` beats
+// an inline style.
+$near-black: (
+  "000000": "0, 0, 0",
+  "080404": "8, 4, 4",
+  "111111": "17, 17, 17",
+  "1b1b1b": "27, 27, 27",
+  "222222": "34, 34, 34",
+  "333333": "51, 51, 51",
+  "3c3c3c": "60, 60, 60",
+);
+
+$sel: ();
+@each $hex, $rgb in $near-black {
+  $sel: append($sel, '[style^="color:##{$hex}"]', comma);
+  $sel: append($sel, '[style^="color: ##{$hex}"]', comma);
+  $sel: append($sel, '[style^="color: rgb(#{$rgb})"]', comma);
+  $sel: append($sel, '[style*="; color: rgb(#{$rgb})"]', comma);
+}
+
+.game_interface :is(#{$sel}) {
   color: $fg !important;
 }
