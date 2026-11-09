@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// The discard pile's show/hide toggle is a translucent white strip: our cyan
+// link color vanishes on it.
+.bgagame-fluxx .flx-toggle a {
+  color: $bg-darker;
+}
