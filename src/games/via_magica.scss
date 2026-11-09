@@ -1,0 +1,12 @@
+@use "../palette" as *;
+
+// Portal rows are light lavender and cyan under BGA's white text (and a gold
+// token count): darkened, as the previous theme did.
+.bgagame-viamagica {
+  :is(#vmg_portalstockrow, .vmg_playerportaldonerow, #vmg_myportaldonerow) {
+    background-color: $bg-dark;
+  }
+  :is(.vmg_playerportalactiverow, #vmg_myportalactiverow) {
+    background-color: $bg-light;
+  }
+}
