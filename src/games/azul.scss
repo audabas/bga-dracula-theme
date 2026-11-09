@@ -1,0 +1,10 @@
+@use "../palette" as *;
+
+// The zoom tip bubble stays white under BGA's white text.
+.bgagame-azul #zoom-notice {
+  background: $bg-light;
+
+  .arrow-right {
+    border-left-color: $bg-light;
+  }
+}
