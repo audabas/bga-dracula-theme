@@ -1,0 +1,9 @@
+@use "../palette" as *;
+
+// Score sheet boxes are white under BGA's white text (previous theme's fix,
+// which also covered the Europe and USA editions). Temporary totals keep their
+// own color.
+:is(.bgagame-boomerangaustralia, .bgagame-boomerangeurope, .bgagame-boomerangusa)
+  .box-normal-content:not(.total-value.total-tmp) {
+  color: $bg-darker;
+}
