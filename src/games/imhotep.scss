@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Site boards, supply-board names and the round counter are light art under
+// BGA's white text (previous theme's fix, plus the round counter).
+.bgagame-imhotep :is(.boards-col-wrapper, .supply-board .player-name, #round_counter) {
+  color: $bg-darker;
+}
