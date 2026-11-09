@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Score multipliers next to player names carry an inline `color:black`, on
+// the dark score chart. Only `!important` beats an inline style.
+.bgagame-yatzy #scoring_chart [style^="color:black"] {
+  color: $fg !important;
+}
