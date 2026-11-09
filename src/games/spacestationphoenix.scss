@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Player boards are a light lavender gradient (game art, its icons drawn for
+// it) under BGA's white text: dark text keeps them as designed.
+.bgagame-spacestationphoenix .player-board {
+  color: $bg-darker;
+}
