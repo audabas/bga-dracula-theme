@@ -1,0 +1,14 @@
+@use "../palette" as *;
+
+// Scythe has no dark mode.
+.bgagame-scythe {
+  // The game paints the status bar light gray: back to the variable every
+  // other game uses.
+  #page-title {
+    background-color: var(--game-palette-bga-gray-244);
+  }
+  // Faction mat name tags and card numbers sit on light art.
+  :is(.faction-player-mat-names, .card-number) {
+    color: $bg-darker;
+  }
+}
