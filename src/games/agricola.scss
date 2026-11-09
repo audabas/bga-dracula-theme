@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Agricola's dark mode makes gray buttons transparent with near-black text, to
+// sit on its beige log and panels; our flat button background (components/button)
+// wins on equal specificity and hides that text. Give the transparency back.
+html .bgagame-agricola .bgabutton_gray {
+  background: transparent;
+}
