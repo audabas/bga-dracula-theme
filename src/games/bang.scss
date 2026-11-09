@@ -1,0 +1,15 @@
+@use "../palette" as *;
+
+// Eliminated players' boards turn light gray (`!important`) under white text:
+// keep them set apart, but dark.
+.bgagame-bang .player-board.eliminated {
+  background-color: $bg-darker !important;
+}
+
+// Character cards (on the table and in their tooltip) and popins are light art
+// under inherited white text (previous theme's fix).
+.bgagame-bang .player-info,
+.bang-character-tooltip,
+.bang_popin {
+  color: $bg-darker;
+}
