@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Card names sit on light card art under BGA's white text.
+.bgagame-thebuildersantiquity .cardname {
+  color: $bg-darker;
+}
