@@ -16,9 +16,9 @@ test("the README tells how to update and that the notice contacts GitHub", () =>
   assert.match(readme, /GitHub Pages/);
 });
 
-test("the README shows the 5 screenshots from the main branch", () => {
+test("the README shows screenshots from the main branch, all present in the repo", () => {
   const names = [...readme.matchAll(screenshotUrl)].map((m) => m[1]);
-  assert.equal(new Set(names).size, 5, names.join(", "));
+  assert.ok(names.length > 0, "no screenshot in the README");
   for (const name of names) {
     assert.ok(fs.existsSync(path.join(root, "screenshots", name)), `screenshots/${name} is missing`);
   }

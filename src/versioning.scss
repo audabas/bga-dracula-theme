@@ -8,6 +8,7 @@
 
 // Version label at the foot of the site (absent in games: no #footer_footer there).
 // Font size and padding are the label's own, not a change to BGA's.
+// The repo URL here and in the update notice is a literal: CSS can't read package.json.
 #footer_footer::after {
   content: "BGA Dracula theme v#{$version}\Ahttps://github.com/audabas/bga-dracula-theme";
   white-space: pre-wrap;

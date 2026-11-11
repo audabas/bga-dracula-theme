@@ -7,7 +7,8 @@
 //   npm run release -- --publish <notes-file> [--dry-run]
 //     push develop, main and the tag, then create the GitHub Release from the reviewed notes.
 //
-// --dry-run runs the read-only checks and prints the commands that would change anything.
+// --dry-run changes no branch, tag or file in the repo, and pushes or publishes nothing: it still
+// runs `git fetch origin` and the checks, prints the commands it would run, and writes the notes draft.
 // The notes draft goes to $RELEASE_NOTES_DIR (default: the OS temp directory).
 const { execFileSync } = require("child_process");
 const fs = require("fs");
@@ -34,6 +35,8 @@ function git(...args) {
     return null;
   }
 }
+
+const packageVersion = () => JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8")).version;
 
 const isAncestor = (a, b) => git("merge-base", "--is-ancestor", a, b) !== null;
 
@@ -68,7 +71,7 @@ function release(level, dryRun) {
     })
   );
 
-  const { version: current } = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
+  const current = packageVersion();
   const version = nextVersion(current, level);
   const tag = `v${version}`;
   if (git("rev-parse", "-q", "--verify", `refs/tags/${tag}`) !== null) refuse([`${tag} already exists.`]);
@@ -119,7 +122,7 @@ function release(level, dryRun) {
 function publish(notesArg, dryRun) {
   const notesFile = path.resolve(fromCaller, notesArg);
   const run = makeRunner(dryRun);
-  const { version } = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
+  const version = packageVersion();
   const tag = `v${version}`;
   const head = git("rev-parse", "HEAD");
   refuse(
