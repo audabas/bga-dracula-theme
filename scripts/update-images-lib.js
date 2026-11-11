@@ -1,5 +1,6 @@
 // Pure helpers for scripts/update-images.js: no git, no file system, so they can be tested.
 
+// The repo, as shown to players (also the Pages index's redirect target, with https://).
 const REPO = "github.com/audabas/bga-dracula-theme";
 
 // Two lines, so each fits a phone's width: the banner is clipped to the viewport around its center.
@@ -7,6 +8,7 @@ const MESSAGES = {
   fr: (version) => [`Thème Dracula : la ${version} est disponible sur`, REPO],
   en: (version) => [`Dracula theme: ${version} is available on`, REPO],
 };
+const LANGUAGES = Object.keys(MESSAGES);
 
 // Latest release: nothing to show, and a 0×0 image takes no room (a 1×1 one adds a pixel).
 const EMPTY = '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0"/>\n';
@@ -16,7 +18,8 @@ const escapeXml = (text) =>
 
 // The update notice's CSS (src/versioning.scss) shows the image at its intrinsic size, centered and
 // clipped to the viewport: it is wider than any screen, with the text at its horizontal center.
-// Colors: $purple background, $bg text. Generic font: an image can't load web fonts.
+// Colors: #bd93f9 is $purple (background) and #282a36 is $bg (text) from src/palette.scss,
+// copied by hand: change them here if the palette changes. Generic font: an image can't load web fonts.
 function bannerSvg(lines) {
   const lineHeight = 18;
   const height = lines.length * lineHeight + 12;
@@ -56,4 +59,4 @@ function noticeImages(tags) {
   );
 }
 
-module.exports = { noticeImages, bannerSvg };
+module.exports = { noticeImages, bannerSvg, EMPTY, LANGUAGES, REPO };

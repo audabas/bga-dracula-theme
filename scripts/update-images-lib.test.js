@@ -1,8 +1,14 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { noticeImages, bannerSvg } = require("./update-images-lib");
+const { noticeImages, bannerSvg, EMPTY, LANGUAGES } = require("./update-images-lib");
 
-const EMPTY = '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0"/>\n';
+test("the empty image takes no room", () => {
+  assert.match(EMPTY, /width="0" height="0"/);
+});
+
+test("images come in French and English", () => {
+  assert.deepEqual(LANGUAGES, ["fr", "en"]);
+});
 
 test("the latest release gets an empty image in both languages", () => {
   assert.deepEqual(noticeImages(["v1.0.0"]), [
