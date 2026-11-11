@@ -17,3 +17,29 @@
   font-size: 0.7rem;
   padding-top: 0.5rem;
 }
+
+// Update notice (docs/adr/0002): a remote image naming the latest release when this
+// one is outdated; empty for the latest release, 404 for an unknown one, so nothing
+// shows. The URL is a permanent contract, never change it. Language follows <html lang>.
+// Dark theme only (the light theme banner takes that spot), and only on the homepage
+// and Preferences -> Advanced (the custom CSS editor) to keep requests to GitHub rare.
+// Sticky, not fixed: last in <body>, it stays at the viewport's bottom while scrolling
+// and, in flow at the end, adds its own height below the version label (none if empty).
+// The image is wider than any screen with its text centered: flex centers it, clipped.
+// No padding or background: the image carries the colors and sets the height.
+html.dark body:has(.bga-homepage, .custom-css-editor) {
+  &::after {
+    content: url("https://audabas.github.io/bga-dracula-theme/update/v#{$version}-en.svg");
+    position: sticky;
+    z-index: 99999;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  &:lang(fr)::after {
+    content: url("https://audabas.github.io/bga-dracula-theme/update/v#{$version}-fr.svg");
+  }
+}
