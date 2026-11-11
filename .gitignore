@@ -1,5 +1,7 @@
 .idea
 node_modules
+# Generated from package.json by scripts/write-version.js
+src/_version.scss
 CLAUDE.md
 .claude
 # Agent / Claude files (kept local)

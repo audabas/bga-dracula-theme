@@ -35,7 +35,7 @@ function partials(dir) {
 }
 
 const groups = {
-  general: ["base.scss", ...partials("components"), ...partials("pages")].filter((f) =>
+  general: ["versioning.scss", "base.scss", ...partials("components"), ...partials("pages")].filter((f) =>
     fs.existsSync(path.join(src, f))
   ),
   games: partials("games"),

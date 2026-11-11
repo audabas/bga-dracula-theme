@@ -1,0 +1,19 @@
+@use "palette" as *;
+@use "version" as *;
+
+// Theme version, generated from package.json (see scripts/write-version.js).
+// Must stay the first @use in style.scss so the header comment opens dist/style.css,
+// where the player can read it in Preferences -> Advanced.
+/*! BGA Dracula theme v#{$version} */
+
+// Version label at the foot of the site (absent in games: no #footer_footer there).
+// Font size and padding are the label's own, not a change to BGA's.
+#footer_footer::after {
+  content: "BGA Dracula theme v#{$version}\Ahttps://github.com/audabas/bga-dracula-theme";
+  white-space: pre-wrap;
+  text-align: center;
+  display: block;
+  color: $comment;
+  font-size: 0.7rem;
+  padding-top: 0.5rem;
+}

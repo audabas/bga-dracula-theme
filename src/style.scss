@@ -1,8 +1,10 @@
 // Entry point: imports only. Each partial does `@use "../palette" as *;` itself
 // so it compiles standalone (scripts/check-size.js measures each one).
 //
-// Order: base first, then shared components, then pages, then games.
+// Order: versioning first (its header comment must open dist/style.css), then base,
+// then shared components, then pages, then games.
 // Add a line here when a partial is created; delete the partial if it ends up empty.
+@use "versioning";
 @use "base";
 @use "components/button";
 @use "components/identity";
