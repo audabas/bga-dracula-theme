@@ -1,0 +1,39 @@
+# Regenerates the update notice's images (docs/adr/0002) for every released tag and deploys
+# them to GitHub Pages (Settings -> Pages -> Source: GitHub Actions).
+name: Update notice images
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; a newer release's run replaces a queued one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # all tags
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node scripts/update-images.js
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,5 +1,7 @@
 .idea
 node_modules
+# Update notice images, built and deployed by .github/workflows/update-images.yml
+site/
 # Generated from package.json by scripts/write-version.js
 src/_version.scss
 CLAUDE.md
