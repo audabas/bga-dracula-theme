@@ -1,10 +1,15 @@
 # Regenerates the update notice's images (docs/adr/0002) for every released tag and deploys
 # them to GitHub Pages (Settings -> Pages -> Source: GitHub Actions).
+#
+# Triggered by pushes to main, not by "release published": main only moves at release time
+# (scripts/release.js fast-forwards it and pushes it atomically with the tag), so a push to main
+# is a new release. It also runs the job on main, which the github-pages environment's default
+# deployment policy allows; a release event runs on the tag ref, which that policy refuses.
 name: Update notice images
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
