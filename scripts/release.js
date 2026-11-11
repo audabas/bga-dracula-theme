@@ -5,7 +5,8 @@
 //     from a clean develop: bump package.json (+ lock), build (aborts over BGA's size limit),
 //     commit "Release vX.Y.Z", fast-forward main, tag vX.Y.Z, draft the release notes, stop.
 //   npm run release -- --publish <notes-file> [--dry-run]
-//     push develop, main and the tag, then create the GitHub Release from the reviewed notes.
+//     push develop, main and the tag, create the GitHub Release from the reviewed notes, then run
+//     the update images workflow on main (it has no automatic trigger, see its header).
 //
 // --dry-run changes no branch, tag or file in the repo, and pushes or publishes nothing: it still
 // runs `git fetch origin` and the checks, prints the commands it would run, and writes the notes draft.
@@ -136,7 +137,14 @@ function publish(notesArg, dryRun) {
   );
   run("git", "push", "--atomic", "origin", "develop", "main", `refs/tags/${tag}`);
   run("gh", "release", "create", tag, "--verify-tag", "--title", tag, "--notes-file", notesFile);
-  console.log(`\n${dryRun ? "[dry run] " : ""}${tag} published.`);
+  run("gh", "workflow", "run", "update-images.yml", "--ref", "main");
+  console.log(
+    [
+      "",
+      `${dryRun ? "[dry run] " : ""}${tag} published; the update notice images are being deployed.`,
+      "Follow the deploy with: gh run list --workflow update-images.yml --limit 1",
+    ].join("\n")
+  );
 }
 
 let args;

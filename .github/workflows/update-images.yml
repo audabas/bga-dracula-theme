@@ -1,15 +1,14 @@
 # Regenerates the update notice's images (docs/adr/0002) for every released tag and deploys
 # them to GitHub Pages (Settings -> Pages -> Source: GitHub Actions).
 #
-# Triggered by pushes to main, not by "release published": main only moves at release time
-# (scripts/release.js fast-forwards it and pushes it atomically with the tag), so a push to main
-# is a new release. It also runs the job on main, which the github-pages environment's default
-# deployment policy allows; a release event runs on the tag ref, which that policy refuses.
+# Run by `npm run release -- --publish` (scripts/release.js) with `gh workflow run update-images.yml
+# --ref main`, once the tag is pushed and the GitHub Release created. Not triggered by "release
+# published": that runs on the tag ref, which the github-pages environment's default deployment
+# policy refuses. Not triggered by pushes to main either: the v1.0.0 atomic push of develop, main
+# and the tag started no run. Run it by hand the same way if a deploy is ever missing.
 name: Update notice images
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
