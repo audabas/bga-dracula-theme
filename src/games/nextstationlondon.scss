@@ -1,7 +1,7 @@
 @use "../palette" as *;
 
-// Crossed-out station marks and score pad values sit on white art under BGA's
-// white text.
-.bgagame-nextstation :is(.nex_stationcrossed, .nex_scorepad_values) {
+// Crossed-out station marks, score pad values and totals, and the player name
+// on the board's white signboard sit on white art under BGA's white text.
+.bgagame-nextstation :is(.nex_stationcrossed, .nex_scorepad_values, .nex_scoreplace, .nex_plname) {
   color: $bg-darker;
 }
