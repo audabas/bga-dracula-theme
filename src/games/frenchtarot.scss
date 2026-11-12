@@ -25,6 +25,14 @@
       background-color: $bg-dark;
     }
   }
+
+  // Hand counter, current bid and card style boxes: the game's translucent
+  // white turns gray on the dark page, under BGA's white text. Dark text, as
+  // in the light theme (all IDs, so `:is()` raises nothing).
+  :is(#turn_count_wrap, #bid_indicator_wrap, #card_style) {
+    color: $bg-darker;
+  }
+
   .green {
     color: $green !important;
   }
