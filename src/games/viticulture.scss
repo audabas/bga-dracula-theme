@@ -1,10 +1,12 @@
 @use "../palette" as *;
 
 .bgagame-viticulture {
-  // Board and player board labels, deck counts, cards, worker names, the
-  // turn header and the translucent white counters get BGA's white text on
-  // light art (previous theme's fix, plus the counters).
-  :is(.label_boardLabels, .label_playerBoardLabels, .playerboard .building_slot, .playerBoardLabels, .deck_count, .card, .papa, .mama, #turn_header, .cc_counter) {
+  // Board and player board labels, deck counts, cards (vine cards' green
+  // pills included), worker names, the turn header and the translucent white
+  // counters get BGA's white text on light art (previous theme's fix, plus the
+  // counters and vine cards). The ID in the list is wanted: it raises the
+  // classes over the game's own dark-mode colors.
+  :is(.label_boardLabels, .label_playerBoardLabels, .playerboard .building_slot, .playerBoardLabels, .deck_count, .card, .vine_card, .papa, .mama, #turn_header, .cc_counter) {
     color: $bg-darker;
   }
   // The played-cards history toggle is forced black (`!important`) on the
