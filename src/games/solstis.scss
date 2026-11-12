@@ -10,3 +10,9 @@
     color: $red !important;
   }
 }
+
+// Spirit help (names and rules) on the game's bright blue page: dark text, as
+// in the light theme.
+.bgagame-solstis .st_help_spirit {
+  color: $bg-darker;
+}
