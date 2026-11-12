@@ -6,9 +6,10 @@
 // vanishes on the dark background: shown light instead (user decisions
 // 2026-11-09). Other player colors are kept. Near-black values seen on live
 // tables (#080404 Vale of Eternity, #111111 Scythe, #1b1b1b Barrage, #3c3c3c
-// For Northwood), plus the plain greys in between. `^=` and the `; ` prefix
-// avoid matching `border-color`/`background-color`. Only `!important` beats
-// an inline style.
+// For Northwood), plus the plain greys in between, and the short `#000;` some
+// games write (Wizards Cup's log; the `;` keeps `#000000` and `#0000ff` out).
+// `^=` and the `; ` prefix avoid matching `border-color`/`background-color`.
+// Only `!important` beats an inline style.
 $near-black: (
   "000000": "0, 0, 0",
   "080404": "8, 4, 4",
@@ -19,7 +20,7 @@ $near-black: (
   "3c3c3c": "60, 60, 60",
 );
 
-$sel: ();
+$sel: ('[style^="color:#000;"]',);
 @each $hex, $rgb in $near-black {
   $sel: append($sel, '[style^="color:##{$hex}"]', comma);
   $sel: append($sel, '[style^="color: ##{$hex}"]', comma);
