@@ -7,10 +7,18 @@ html {
   .ca_board .ca_counter,
   .ca_playerInfo .ca_counter_bc {
     background-color: rgba($current-line, 0.5);
+    color: $fg;
   }
 
   .ca_btn_choice_help,
   .aal-popup-overlay .aal-popup-content {
     background: $bg-light;
   }
+}
+
+// Player panels: the game's translucent white turns mid-gray on the dark
+// page, under BGA's white text. Dark text, as in the light theme; the counters
+// above keep light text on their darkened pills.
+.bgagame-castleofmadkingludwig .player-board {
+  color: $bg-darker;
 }
