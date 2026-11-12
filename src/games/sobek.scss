@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Deck counter on its white badge (invisible under BGA's white text) and the
+// small sign on the parchment score track: dark text, as in the light theme.
+// Both IDs, so `:is()` raises nothing.
+.bgagame-sobek :is(#deck_count, #pi_sign) {
+  color: $bg-darker;
+}
