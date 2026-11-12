@@ -7,8 +7,11 @@
   #page-title {
     background-color: var(--game-palette-bga-gray-244);
   }
-  // Faction mat name tags and card numbers sit on light art.
-  :is(.faction-player-mat-names, .card-number) {
+  // Faction mat name tags, card numbers, the faction mats' counter strip
+  // (translucent white) and ability card (parchment), and the round counter
+  // on the beige settings panel sit on light art. Its ID stays out of `:is()`.
+  :is(.faction-player-mat-names, .card-number, .faction-counters, .faction-ability),
+  #round-counter-holder {
     color: $bg-darker;
   }
 }
