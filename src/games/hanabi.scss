@@ -1,9 +1,10 @@
 @use "../palette" as *;
 
-// Clue badges above the cards: gray for a number, or the clued color. The
-// game sets black on its yellow, white and black badges; the others inherit
-// BGA's white text. Dark text, as in the light theme, except on the dark
-// purple badge, where light text reads better.
+// Clue badges above the cards: gray for a number, or the clued color
+// (`.colored_element_N`, 6 is purple). The game sets black text itself on its
+// yellow, white and black badges (2, 5, 7); the others inherit BGA's white
+// text. Dark text, as in the light theme, except on the dark purple badge,
+// where light text reads better.
 .bgagame-hanabi .clue_panel {
   color: $bg-darker;
 }

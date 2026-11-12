@@ -2,7 +2,8 @@
 
 // Scoundrel card names and texts sit on light sky art, and the player panels
 // on the game's light wood, under BGA's white text. The spectator list keeps
-// BGA's dark panel (its ID stays out of `:is()`).
+// BGA's dark panel. Kept apart from the `:is()` list: the ID in `:not()`
+// raises its selector's specificity, not the scoundrel cards'.
 .bgagame-threethousandscoundrels .scoundrel,
 .bgagame-threethousandscoundrels .player-board:not(#spectatorbox) {
   color: $bg-darker;
