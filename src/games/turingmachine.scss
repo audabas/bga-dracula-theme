@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Criteria card captions ("is even", "yellow is less than 3"…) on the cards'
+// white lower half: invisible under BGA's white text. Dark, as in the light
+// theme.
+.bgagame-turingmachine .imgdowncrit {
+  color: $bg-darker;
+}
