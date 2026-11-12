@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Zone labels (deck, discard, hand, collections) on the game's translucent
+// white pills: dark text, as in the light theme. Player names keep their color.
+.bgagame-cubirds .block_title {
+  color: $bg-darker;
+}
