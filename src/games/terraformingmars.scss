@@ -4,8 +4,11 @@
 // light theme. The previous theme darkened the whole game's text, which also
 // hit the status bar.
 
-// Mid-gray player boards, light card stack labels and card faces.
-.bgagame-terraformingmars :is(.player-board, .groupline, .stack_label, .stack_detail_txt, .card) {
+// Mid-gray player boards, light card stack labels, card faces and the
+// standard projects title (yellow pill; its ID stays out of `:is()`, which
+// would raise the whole list's specificity).
+.bgagame-terraformingmars :is(.player-board, .groupline, .stack_label, .stack_detail_txt, .card),
+.bgagame-terraformingmars #standard_projects_title_zone {
   color: $bg-darker;
 }
 
