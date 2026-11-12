@@ -1,6 +1,9 @@
 @use "../palette" as *;
 
-// Scoundrel card names and texts sit on light sky art under BGA's white text.
-.bgagame-threethousandscoundrels .scoundrel {
+// Scoundrel card names and texts sit on light sky art, and the player panels
+// on the game's light wood, under BGA's white text. The spectator list keeps
+// BGA's dark panel (its ID stays out of `:is()`).
+.bgagame-threethousandscoundrels .scoundrel,
+.bgagame-threethousandscoundrels .player-board:not(#spectatorbox) {
   color: $bg-darker;
 }
