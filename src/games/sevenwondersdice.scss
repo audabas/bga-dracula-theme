@@ -1,9 +1,12 @@
 @use "../palette" as *;
 
-// Gold coins, the forum and close toggles, the pay preview, the score sheet
-// and the settings panel are light under BGA's white text (previous theme's
-// fix; its `.miniline` rule is dropped, those now sit on the dark panel).
-.bgagame-sevenwondersdice :is(.overlay_close, .inline_coin, .score_sheet_inside, #paypreview_container, #decompress_forum, #compress_forum),
+// Gold coins (inline and in the player panels), the forum and close toggles,
+// the pay preview, the score sheet and the settings panel are light under
+// BGA's white text (previous theme's fix; its `.miniline` rule is dropped,
+// those now sit on the dark panel). IDs and classes sit in separate `:is()`
+// lists.
+.bgagame-sevenwondersdice :is(.overlay_close, .inline_coin, .icon.coin, .score_sheet_inside),
+.bgagame-sevenwondersdice :is(#paypreview_container, #decompress_forum, #compress_forum),
 #custom_settings_panel {
   color: $bg-darker;
 }
