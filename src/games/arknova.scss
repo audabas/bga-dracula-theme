@@ -12,10 +12,13 @@
     background: $bg-light !important;
   }
 
-  // Small light badges: dark text.
+  // Small light badges, the map's notepad (worker counter, player arrows) and
+  // the conservation track's bonus icons: dark text.
   .scoringHandCount-holder,
   .space-counter,
-  .player-board-sizes-counters {
+  .player-board-sizes-counters,
+  .map-infos,
+  .icon-bonus {
     color: $bg-darker;
   }
 
