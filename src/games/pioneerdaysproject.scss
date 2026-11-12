@@ -1,0 +1,8 @@
+@use "../palette" as *;
+
+// Character cards (name and ability on parchment) under each player's
+// portrait: BGA's white text made them invisible. Dark text, as in the light
+// theme.
+.bgagame-pioneerdaysproject .character {
+  color: $bg-darker;
+}
