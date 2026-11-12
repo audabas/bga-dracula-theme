@@ -1,7 +1,10 @@
 @use "../palette" as *;
 
-// Bank amounts (beige art) and the gray panel labels (light gray panels) are
-// a mid gray that barely shows.
-.bgagame-puertorico :is(#bank span, .tiles_label) {
+// Bank amounts (beige art), the gray panel labels, and the plantation and
+// quarry stocks and quarry discounts on the gray supply panels: mid gray or
+// BGA's white text that barely shows. IDs and classes sit in separate `:is()`
+// lists, so the IDs raise nothing else.
+.bgagame-puertorico :is(.tiles_label, .rock),
+.bgagame-puertorico :is(#bank span, #plantations) {
   color: $bg-darker;
 }
