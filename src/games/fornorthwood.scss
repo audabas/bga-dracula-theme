@@ -1,9 +1,14 @@
 @use "../palette" as *;
 
 .bgagame-fornorthwood {
-  // White cards under BGA's white text (the previous theme darkened the whole
+  // White cards and fief cards (speech bubble, target number), the dialogue's
+  // rank badges and the transparent player panels on the game's light green
+  // page, all under BGA's white text (the previous theme darkened the whole
   // game's text, which would also hit its dark bands).
-  .card {
+  .card,
+  .fief,
+  .rank_icon,
+  .player-board.transparent {
     color: $bg-darker;
   }
 
