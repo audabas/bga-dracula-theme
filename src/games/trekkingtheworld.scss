@@ -1,7 +1,7 @@
 @use "../palette" as *;
 
-// Map destination tags, cards and turn markers are white art under BGA's
-// white text.
-.bgagame-trekkingtheworld :is(.playerTurn, .endGame, .destination p, .journeyCard, .destinationFront .card_title, .destinationCard .card_description) {
+// Map destination tags, cards (destination cards' titles included, award
+// postcards) and turn markers are white art under BGA's white text.
+.bgagame-trekkingtheworld :is(.playerTurn, .endGame, .destination p, .journeyCard, .destinationFront .card_title, .destinationCard, .postcard) {
   color: $bg-darker;
 }
