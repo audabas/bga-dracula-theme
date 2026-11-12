@@ -115,7 +115,9 @@ html.dark {
 // Text follows the interface language (<html lang>): French, otherwise English.
 // Not during a game (light theme may be on purpose there): body.game_interface,
 // and the spectator / replay shells around its iframe.
-html:not(.dark, .bga-tableview-page, .bga-archive-page) body:not(.game_interface) {
+// Only on pages with <html lang>: BGA's bare error pages (error, Forbidden, 404) have none, and no
+// html.dark either, so the theme is unknown there (even inside the game iframe).
+html[lang]:not(.dark, .bga-tableview-page, .bga-archive-page) body:not(.game_interface) {
   &::before {
     content: "Dracula theme: enable BGA's dark theme";
     position: fixed;
