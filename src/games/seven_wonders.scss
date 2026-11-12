@@ -1,0 +1,6 @@
+@use "../palette" as *;
+
+// Edifice costs on their yellow coins: dark text, as in the light theme.
+.bgagame-sevenwonders .edifice-cost {
+  color: $bg-darker;
+}
