@@ -1,0 +1,13 @@
+@use "../palette" as *;
+
+.bgagame-throughtheagesnewstory {
+  // The "Activate" link on a leader card's white banner gets our cyan link
+  // color, barely visible: dark, as in the light theme.
+  .activecard {
+    color: $bg-darker;
+  }
+  // The "(First player)" notice stays black on the darkened player area.
+  .firstplayernotice {
+    color: $fg;
+  }
+}
