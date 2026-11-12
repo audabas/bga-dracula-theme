@@ -1,6 +1,6 @@
 {
   "name": "bga-dracula-theme",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Dracula theme for boardgamearena.com, built on top of the official BGA dark theme",
   "dependencies": {
     "sass": "^1.30.0"
