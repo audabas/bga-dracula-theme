@@ -3,7 +3,11 @@
 .bgagame-thecrew {
   // The task panel and player tables are translucent white: the heading and
   // the AI player's name (invalid inline color) keep BGA's white text.
-  :is(#tasks, .player-table-name) {
+  // The end-of-mission panel is translucent white too, and the discard
+  // track's green, pink and yellow slots are light; the blue and black slots
+  // keep light text. IDs stay together in their own `:is()`.
+  :is(#tasks, #end-panel),
+  :is(.player-table-name, .discard-slot:is(.color-2, .color-3, .color-4)) {
     color: $bg-darker;
   }
   // Card colors in the log (`#logs span.card-value.X`, (1,2,1)): black, blue
