@@ -1,16 +1,11 @@
 @use "../palette" as *;
 
-.bgagame-maracaibo {
-  // Parchment tabs (selected one included), scrolls, the next-quest label, the
-  // end-of-round banner, the white score sheet and the parchment log entries
-  // get BGA's white text. IDs stay out of `:is()`.
-  :is(.mcb-tab, .mcb-scroll, .mcb-endRound, .mcb-scoreSheet),
-  #mcb-nextQuest-text,
-  #logs .roundedbox {
-    color: $bg-darker;
-  }
-  // Except scrolls on dark card panes and combat tiles (previous theme's fix).
-  :is(.mcb-card-pane, .mcb-scroll-combatTile) .mcb-scroll {
-    color: $fg;
-  }
+// Parchment tabs (selected one included), scrolls (combat tiles included), the
+// next-quest label, the end-of-round banner, the white score sheet and the
+// parchment log entries get BGA's white text. The numbers on the cards'
+// scroll badges keep the game's own colors. IDs stay out of `:is()`.
+.bgagame-maracaibo :is(.mcb-tab, .mcb-scroll, .mcb-endRound, .mcb-scoreSheet),
+.bgagame-maracaibo #mcb-nextQuest-text,
+.bgagame-maracaibo #logs .roundedbox {
+  color: $bg-darker;
 }
