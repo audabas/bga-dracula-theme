@@ -15,6 +15,12 @@
   color: $bg-darker;
 }
 
+// Colony tiles in synthetic mode fade to black: the trade value sits on the
+// dark end, light text stays.
+.bgagame-terraformingmars .display_colonies[data-mode="synthetic"] .colony-trade-value {
+  color: $fg;
+}
+
 // Score summary popin: beige cells. The popin lives outside
 // `.bgagame-terraformingmars`, and its class names are generic.
 body:has(.bgagame-terraformingmars) .scoretable .scorecell {
