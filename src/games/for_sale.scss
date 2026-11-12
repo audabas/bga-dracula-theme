@@ -5,3 +5,9 @@
 .bgagame-forsale .player_bid_zone_disabled {
   background-color: $bg-darker;
 }
+
+// Deck counters on the property and currency card backs (light art): dark
+// text, as in the light theme.
+.bgagame-forsale .current_deck {
+  color: $bg-darker;
+}
