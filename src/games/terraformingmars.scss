@@ -5,17 +5,13 @@
 // hit the status bar.
 
 // Mid-gray player boards, stock counters on their half-white boxes, card stack
-// labels and counters (gray, green, blue, red tabs), card faces, megacredit
-// coins (log included) and the standard projects title (yellow pill; its ID
-// stays out of `:is()`, which would raise the whole list's specificity).
-.bgagame-terraformingmars :is(.player-board, .playerboard_own, .groupline, .stack_label, .stack_sum, .stack_detail_txt, .card, .tracker_m),
+// labels and counters (gray, green, blue, red tabs), card faces, the silver
+// milestone and award panel (on every map: Amazonis compact draws it in the
+// board image), megacredit coins (log included) and the standard projects
+// title (yellow pill; its ID stays out of `:is()`, which would raise the whole
+// list's specificity).
+.bgagame-terraformingmars :is(.player-board, .playerboard_own, .groupline, .stack_label, .stack_sum, .stack_detail_txt, .card, .mileaw_main, .tracker_m),
 .bgagame-terraformingmars #standard_projects_title_zone {
-  color: $bg-darker;
-}
-
-// Silver milestone and award panel (costs, labels, award names). Amazonis in
-// compact mode (`html.mcompact`, `body.map_4`) removes the panel art: left alone.
-:is(html:not(.mcompact), body:not(.map_4)) .bgagame-terraformingmars .mileaw_main {
   color: $bg-darker;
 }
 
