@@ -1,6 +1,7 @@
 @use "../palette" as *;
 
-// Light-point suns and the white 3D buttons get BGA's white text.
-.bgagame-photosynthesis :is(.psy_overlay_button, .psy_toolbtn, .psy_suncounter_value) {
+// Light-point suns (counters and log costs) and the white 3D buttons get
+// BGA's white text.
+.bgagame-photosynthesis :is(.psy_overlay_button, .psy_toolbtn, .psy_suncounter_value, .psy_log_cost) {
   color: $bg-darker;
 }
