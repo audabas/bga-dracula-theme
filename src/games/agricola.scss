@@ -6,3 +6,8 @@
 html .bgagame-agricola .bgabutton_gray {
   background: transparent;
 }
+
+// Spectator panel on the game's beige texture: dark text, as in the light theme.
+.bgagame-agricola .player-board.spectator-mode {
+  color: $bg-darker;
+}
