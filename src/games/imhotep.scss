@@ -1,7 +1,9 @@
 @use "../palette" as *;
 
-// Site boards, supply-board names and the round counter are light art under
-// BGA's white text (previous theme's fix, plus the round counter).
-.bgagame-imhotep :is(.boards-col-wrapper, .supply-board .player-name, #round_counter) {
+// Site boards, supply-board names and the beige status strip (round counter,
+// variant in play) are light art under BGA's white text (previous theme's
+// fix, plus the status strip). Its ID stays out of `:is()`.
+.bgagame-imhotep :is(.boards-col-wrapper, .supply-board .player-name),
+.bgagame-imhotep #status_bar {
   color: $bg-darker;
 }
