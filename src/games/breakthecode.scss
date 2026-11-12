@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Deck counter under the question deck, on the white player area: BGA's white
+// text made it invisible. Dark text, as in the light theme.
+.bgagame-breakthecode .decknum {
+  color: $bg-darker;
+}
