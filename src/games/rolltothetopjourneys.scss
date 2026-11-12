@@ -1,6 +1,8 @@
 @use "../palette" as *;
 
-// Numbers written on the pyramid's white bricks get BGA's white text.
-.bgagame-rolltothetopjourneys .field_num {
+// Numbers written on the pyramid's white bricks, and the "Active Dice" title
+// on the game's translucent white panel (gray on the dark page), get BGA's
+// white text.
+.bgagame-rolltothetopjourneys :is(.field_num, .dice_area_active) {
   color: $bg-darker;
 }
