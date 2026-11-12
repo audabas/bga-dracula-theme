@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Player plates (name and points) by the lanterns, on white: invisible under
+// BGA's white text once shown. Dark text, as in the light theme.
+.bgagame-stella :is(.ste_playerplate_name, .ste_playerplate_pg) {
+  color: $bg-darker;
+}
