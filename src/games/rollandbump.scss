@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Set bonus table ("Cards in Set" / "Bonus") on the game's light taupe page:
+// BGA's white text barely shows. Dark text, as in the light theme.
+.bgagame-rollandbump #rnb_rewards {
+  color: $bg-darker;
+}
