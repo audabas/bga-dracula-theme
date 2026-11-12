@@ -1,8 +1,22 @@
 @use "../palette" as *;
 
-// Mid-gray player boards, the light card stack labels and the light card faces
-// inherit BGA's white text: dark text instead, as in the light theme. The
-// previous theme darkened the whole game's text, which also hit the status bar.
+// Light game elements inherit BGA's white text: dark text instead, as in the
+// light theme. The previous theme darkened the whole game's text, which also
+// hit the status bar.
+
+// Mid-gray player boards, light card stack labels and card faces.
 .bgagame-terraformingmars :is(.player-board, .groupline, .stack_label, .stack_detail_txt, .card) {
+  color: $bg-darker;
+}
+
+// Silver milestone and award panel (costs, labels, award names). Amazonis in
+// compact mode (`html.mcompact`, `body.map_4`) removes the panel art: left alone.
+:is(html:not(.mcompact), body:not(.map_4)) .bgagame-terraformingmars .mileaw_main {
+  color: $bg-darker;
+}
+
+// Score summary popin: beige cells. The popin lives outside
+// `.bgagame-terraformingmars`, and its class names are generic.
+body:has(.bgagame-terraformingmars) .scoretable .scorecell {
   color: $bg-darker;
 }
