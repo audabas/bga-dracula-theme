@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Section titles on the players' colored brush banners, and the rules on the
+// back of the scoring cards (beige): dark text, as in the light theme.
+.bgagame-canvas :is(.title, .canvas-scoring-card .back) {
+  color: $bg-darker;
+}
