@@ -1,0 +1,7 @@
+@use "../palette" as *;
+
+// Objective cards: the rule text sits on the card's white body, invisible
+// under BGA's white text. Dark text, as in the light theme.
+.bgagame-dicethemepark .cellobjectivetext {
+  color: $bg-darker;
+}
