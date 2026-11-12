@@ -10,3 +10,9 @@
     color: $red !important;
   }
 }
+
+// Header (round counter) on the game's beige page: dark text, as in the light
+// theme.
+.bgagame-valeofeternity .ve_header {
+  color: $bg-darker;
+}
